@@ -1,0 +1,12 @@
+{
+  "name": "weather-trading",
+  "version": "1.0.0",
+  "description": "Multi-source weather forecast pipeline for Kalshi temperature markets",
+  "type": "module",
+  "scripts": {
+    "forecast": "node forecast.js",
+    "observe": "node observe.js",
+    "backtest": "node backtest.js"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-02-09",
+  "results": {
+    "KNYC": {
+      "forecasts": [
+        {
+          "source": "NWS",
+          "high_f": 30,
+          "description": "Sunny"
+        },
+        {
+          "source": "GFS (Open-Meteo)",
+          "high_f": 25.3,
+          "low_f": -0.1
+        },
+        {
+          "source": "ECMWF (Open-Meteo)",
+          "high_f": 22.4,
+          "low_f": 1.8
+        }
+      ],
+      "spread": 7.6,
+      "mean": 25.9,
+      "median": 25.3,
+      "adjustedMean": 24.9,
+      "climDeviation": -15.1,
+      "climNormalHigh": 40,
+      "tradeable": false,
+      "warnings": [
+        "CLIM_OUTLIER"
+      ],
+      "reason": "Forecast 24.9°F is 15.1°F from normal (40°F) — climatological outlier"
+    }
+  }
+}
