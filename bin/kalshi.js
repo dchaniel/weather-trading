@@ -12,6 +12,7 @@ const COMMANDS = {
   recommend:  () => import('../commands/recommend.js').then(m => m.default(args)),
   daily:      () => import('../commands/daily.js').then(m => m.default(args)),
   crypto:     () => import('../commands/crypto.js').then(m => m.default(args)),
+  precip:     () => import('../commands/precip.js').then(m => m.default(args)),
   gas:        () => import('../commands/gas.js').then(m => m.default(args)),
   flights:    () => import('../commands/flights.js').then(m => m.default(args)),
   calibrate:  () => import('../commands/calibrate.js').then(m => m.default(args)),
@@ -41,6 +42,7 @@ kalshi — Kalshi Multi-Strategy Trading CLI
   crypto                                      Crypto market analysis & signals ⭐
   gas                                         Gas price analysis & signals ⭐
   flights     [date] [--faa] [--detail]       O'Hare flight delay strategy ✈️
+  precip        [subcommand]                  Precipitation (rain/snow) market analysis 🌧️
   calibrate     [days] [station]              Weather forecast accuracy stats
   health        [-v]                          System health diagnostics
 

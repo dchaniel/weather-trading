@@ -20,5 +20,11 @@
     "kellyFraction": 0.25,
     "transactionCost": 0.04
   },
+  "precipitation": {
+    "minEdge": 0.05,
+    "maxBidAskSpread": 0.15,
+    "tradeableStations": ["NYC_DAILY", "SFO_MONTHLY", "DEN_MONTHLY", "CHI_MONTHLY"],
+    "_comment": "Precipitation strategy config. Daily binary + monthly threshold markets."
+  },
   "_comment": "Paper trading config — loosen limits for learning. Edit values and they take effect on next run."
 }

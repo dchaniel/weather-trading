@@ -39,34 +39,32 @@ async function computeForecastErrors(station, days = 30) {
     const errors = [];
     const dates = Object.keys(observations).slice(0, -1); // Exclude today (no observation yet)
     
-    for (const date of dates) {
-      try {
-        // Get forecast as it would have been that day
-        const fc = await forecast(station, date);
-        const forecastHigh = fc.consensus?.adjustedMean;
-        const actualHigh = observations[date];
-        
-        if (forecastHigh != null && actualHigh != null) {
-          const error = Math.abs(forecastHigh - actualHigh);
-          const month = parseInt(date.slice(5, 7));
-          
-          errors.push({
-            date,
-            forecast: forecastHigh,
-            actual: actualHigh,
-            error,
-            month,
-            season: getSeason(month),
-          });
-        }
-        
-        // Throttle API calls
-        await new Promise(resolve => setTimeout(resolve, 100));
-      } catch (e) {
-        // Skip dates with forecast errors
-        continue;
+    const total = dates.length;
+    // Process in parallel batches of 5 for speed
+    for (let i = 0; i < total; i += 5) {
+      const batch = dates.slice(i, i + 5);
+      const results = await Promise.allSettled(
+        batch.map(async (date) => {
+          const fc = await forecast(station, date);
+          const forecastHigh = fc.consensus?.adjustedMean;
+          const actualHigh = observations[date];
+          if (forecastHigh != null && actualHigh != null) {
+            const month = parseInt(date.slice(5, 7));
+            return { date, forecast: forecastHigh, actual: actualHigh, error: Math.abs(forecastHigh - actualHigh), month, season: getSeason(month) };
+          }
+          return null;
+        })
+      );
+      for (const r of results) {
+        if (r.status === 'fulfilled' && r.value) errors.push(r.value);
       }
+      // Progress every 10 dates
+      if ((i + 5) % 10 < 5 || i + 5 >= total) {
+        process.stdout.write(`\r   ⏳ ${Math.min(i + 5, total)}/${total} days processed...`);
+      }
+      await new Promise(resolve => setTimeout(resolve, 50));
     }
+    console.log(); // newline after progress
     
     return errors;
   } catch (error) {
@@ -197,8 +195,10 @@ export default async function(args) {
   console.log(`Target stations: ${stations.join(', ')}`);
   console.log(`Analysis period: Last ${days} days`);
   
-  for (const station of stations) {
-    console.log(`\n🎯 ${station} — ${STATIONS[station]?.name || station}`);
+  const total = stations.length;
+  for (let idx = 0; idx < total; idx++) {
+    const station = stations[idx];
+    console.log(`\n🎯 [${idx + 1}/${total}] ${station} — ${STATIONS[station]?.name || station}`);
     console.log('─'.repeat(50));
     
     try {

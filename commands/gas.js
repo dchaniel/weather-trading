@@ -18,6 +18,7 @@ Analyze gas price markets using mean-reversion + seasonality model.
 
 Flags:
   --backtest     Include historical backtest results
+  --json         Output raw JSON (for programmatic use)
   -h, --help     Show this help
 
 Shows:
@@ -43,6 +44,17 @@ Examples:
   }
 
   const runBacktest = args.includes('--backtest');
+  const jsonMode = args.includes('--json');
+
+  if (jsonMode) {
+    try {
+      const result = await runGasStrategy({ runBacktest });
+      console.log(JSON.stringify(result, null, 2));
+    } catch (e) {
+      console.log(JSON.stringify({ error: e.message }));
+    }
+    return;
+  }
 
   console.log('\n⛽ Gas Price Analysis');
   console.log('═'.repeat(60));
@@ -77,11 +89,15 @@ Examples:
   console.log(`    Fair value:      $${pred.weekly.fairValue.toFixed(3)}/gal (crude-implied + seasonal)`);
   console.log(`    Deviation:       ${signed(pred.weekly.deviation * 100, 1)}¢ from fair value`);
 
-  console.log(`\n    Weekly:  $${pred.weekly.mean.toFixed(3)} ± $${pred.weekly.sigma.toFixed(3)}`);
+  const wLo = (pred.weekly.mean - 1.96 * pred.weekly.sigma).toFixed(3);
+  const wHi = (pred.weekly.mean + 1.96 * pred.weekly.sigma).toFixed(3);
+  console.log(`\n    Weekly:  $${pred.weekly.mean.toFixed(3)} ± $${pred.weekly.sigma.toFixed(3)}  (95% CI: $${wLo}–$${wHi})`);
   console.log(`      Mean-rev adj:  ${signed(pred.weekly.meanRevAdj * 100, 1)}¢`);
   console.log(`      Trend adj:     ${signed(pred.weekly.trendAdj * 100, 1)}¢`);
 
-  console.log(`\n    Monthly: $${pred.monthly.mean.toFixed(3)} ± $${pred.monthly.sigma.toFixed(3)}`);
+  const mLo = (pred.monthly.mean - 1.96 * pred.monthly.sigma).toFixed(3);
+  const mHi = (pred.monthly.mean + 1.96 * pred.monthly.sigma).toFixed(3);
+  console.log(`\n    Monthly: $${pred.monthly.mean.toFixed(3)} ± $${pred.monthly.sigma.toFixed(3)}  (95% CI: $${mLo}–$${mHi})`);
 
   // ── Seasonal Outlook ─────────────────────────────────────────────────
   const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];

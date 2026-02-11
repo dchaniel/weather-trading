@@ -10,6 +10,7 @@ import { fetchMarkets, parseTicker } from '../lib/kalshi/markets.js';
 import { positionSize } from '../lib/core/sizing.js';
 import { today, signed, sleep, probAboveThreshold } from '../lib/core/utils.js';
 import { runCryptoStrategy } from '../lib/crypto/strategy.js';
+import { runGasStrategy } from '../lib/gas/strategy.js';
 import { logInfo, logError } from '../lib/core/logger.js';
 
 /**
@@ -96,6 +97,7 @@ export default async function(args) {
     risk: null,
     forecasts: {},
     crypto: null,
+    gas: null,
     recommendations: [],
     openPositions: [],
     summary: '',
@@ -217,7 +219,25 @@ export default async function(args) {
     briefing.crypto = { error: e.message };
   }
 
-  // 6. Summary
+  // 6. Gas analysis
+  try {
+    const gas = await runGasStrategy();
+    briefing.gas = {
+      currentGas: gas.data.currentGas.price,
+      currentCrude: gas.data.currentCrude.price,
+      fairValue: gas.predictions.weekly.fairValue,
+      weeklyPred: gas.predictions.weekly.mean,
+      weeklySigma: gas.predictions.weekly.sigma,
+      recommendations: gas.markets.recommendations,
+    };
+    for (const rec of gas.markets.recommendations) {
+      briefing.recommendations.push({ strategy: 'gas', ...rec });
+    }
+  } catch (e) {
+    briefing.gas = { error: e.message };
+  }
+
+  // 7. Summary
   const ledger = getLedger();
   const lines = [];
   lines.push(`📊 Trading Daily Briefing — ${date}`);
@@ -264,11 +284,20 @@ export default async function(args) {
     }
   }
 
+  // Gas section
+  if (briefing.gas && !briefing.gas.error) {
+    lines.push('');
+    lines.push('⛽ GAS:');
+    lines.push(`  Gas: $${briefing.gas.currentGas.toFixed(3)}/gal | Crude: $${briefing.gas.currentCrude.toFixed(2)}/bbl`);
+    lines.push(`  Fair value: $${briefing.gas.fairValue.toFixed(3)} | Pred: $${briefing.gas.weeklyPred.toFixed(3)} ± $${briefing.gas.weeklySigma.toFixed(3)}`);
+  }
+
   // Recommendations
   const weatherRecs = briefing.recommendations.filter(r => r.strategy === 'weather');
   const cryptoRecs = briefing.recommendations.filter(r => r.strategy === 'crypto');
+  const gasRecs = briefing.recommendations.filter(r => r.strategy === 'gas');
 
-  if (weatherRecs.length || cryptoRecs.length) {
+  if (weatherRecs.length || cryptoRecs.length || gasRecs.length) {
     lines.push('');
     lines.push('🎯 Recommendations:');
     for (const rec of weatherRecs) {
@@ -280,6 +309,12 @@ export default async function(args) {
       const edge = rec.edge ?? 0;
       const contracts = rec.contracts ?? 0;
       lines.push(`  ₿ ${rec.side} ${rec.ticker} — ${contracts}x @ $${price.toFixed(2)} (edge: ${signed(edge * 100)}%)`);
+    }
+    for (const rec of gasRecs) {
+      const price = rec.execPrice ?? 0;
+      const edge = rec.edge ?? 0;
+      const contracts = rec.contracts ?? 0;
+      lines.push(`  ⛽ ${rec.side} ${rec.ticker} — ${contracts}x @ $${price.toFixed(2)} (edge: ${signed(edge * 100)}%)`);
     }
   } else {
     lines.push('');

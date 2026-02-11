@@ -122,6 +122,9 @@ Examples:
   // ── Flights ──────────────────────────────────────────────────────────
   const flightRecs = await fetchFlightRecs(dates, customMinEdge, ledger.balance);
 
+  // ── Precipitation ────────────────────────────────────────────────────
+  const precipRecs = await fetchPrecipRecs(ledger.balance);
+
   // ── Crypto ───────────────────────────────────────────────────────────
   const cryptoRecs = await fetchCryptoRecs();
 
@@ -149,7 +152,7 @@ Examples:
   }
 
   // ── Combine & rank ──────────────────────────────────────────────────
-  const combined = [...passedWeather, ...cryptoRecs, ...gasRecs].sort((a, b) => b.ev - a.ev).slice(0, 5);
+  const combined = [...passedWeather, ...precipRecs, ...flightRecs, ...cryptoRecs, ...gasRecs].sort((a, b) => b.ev - a.ev).slice(0, 5);
 
   if (!combined.length) {
     console.log('\n  No trades with edge ≥ 5% found across weather or crypto.\n');
@@ -166,6 +169,52 @@ Examples:
   }
 
   console.log();
+}
+
+// ── Flights fetcher ───────────────────────────────────────────────────
+async function fetchFlightRecs(dates, minEdge, balance) {
+  const recs = [];
+  try {
+    const { runFlightStrategy } = await import('../lib/flights/matcher.js');
+    for (const date of dates) {
+      const result = await runFlightStrategy({ date, minEdge, balance });
+      if (result.marketsFound > 0) {
+        console.log(`\n✈️  FLIGHTS (${date})\n` + '─'.repeat(50));
+        console.log(`  Weather: ${result.summary.weatherCategory} | P(delay): ${(result.summary.pDelay * 100).toFixed(1)}%`);
+      }
+      for (const rec of result.recommendations) {
+        recs.push(rec);
+      }
+      if (result.marketsFound === 0 && dates.indexOf(date) === 0) {
+        console.log(`\n✈️  FLIGHTS\n` + '─'.repeat(50));
+        console.log(`  ⚠️ No active ORDDLY/FLIGHTORD markets. Strategy ready but markets dormant.`);
+      }
+    }
+  } catch (e) {
+    console.log(`\n✈️  FLIGHTS\n` + '─'.repeat(50));
+    console.log(`  ⚠ ${e.message}`);
+  }
+  return recs;
+}
+
+// ── Precipitation fetcher ─────────────────────────────────────────────
+async function fetchPrecipRecs(balance) {
+  try {
+    const { scanPrecipMarkets, formatPrecipRec } = await import('../lib/precipitation/matcher.js');
+    const recs = await scanPrecipMarkets({ balance, minEdge: 0.05 });
+    if (recs.length > 0) {
+      console.log('\n🌧️  PRECIPITATION\n' + '─'.repeat(50));
+      for (const r of recs.slice(0, 3)) console.log(formatPrecipRec(r));
+    } else {
+      console.log('\n🌧️  PRECIPITATION\n' + '─'.repeat(50));
+      console.log('  ⛔ No precipitation trades — no edges ≥5% at executable prices.');
+    }
+    return recs;
+  } catch (e) {
+    console.log('\n🌧️  PRECIPITATION\n' + '─'.repeat(50));
+    console.log(`  ⚠ ${e.message}`);
+    return [];
+  }
 }
 
 // ── Crypto fetcher ────────────────────────────────────────────────────
@@ -257,6 +306,17 @@ function displayResults(combined) {
       console.log(`  ${r.side} ${r.ticker} @ $${(r.price ?? 0).toFixed(2)} (${r.seriesLabel || 'gas'})`);
       console.log(`    P(est): ${((r.pEst ?? 0) * 100).toFixed(1)}%  Edge: ${signed((r.edge ?? 0) * 100, 1)}%`);
       console.log(`    Size: ${r.sizing?.contracts ?? 0} contracts ($${(r.sizing?.dollarRisk ?? 0).toFixed(2)} risk)`);
+    }
+  }
+
+  const precipTrades = combined.filter(r => r.strategy === 'precipitation');
+  if (precipTrades.length) {
+    console.log('\n🌧️  PRECIPITATION\n' + '─'.repeat(50));
+    for (const r of precipTrades) {
+      const typeLabel = r.marketType === 'daily_binary' ? 'Rain' : `>${r.threshold}"`;
+      console.log(`  ${r.side} ${r.ticker} @ $${r.price.toFixed(2)} (${typeLabel})`);
+      console.log(`    P(est): ${(r.pEst * 100).toFixed(1)}%  Edge: ${signed(r.edge * 100, 1)}%`);
+      console.log(`    Size: ${r.sizing.contracts} contracts ($${r.sizing.dollarRisk.toFixed(2)} risk)`);
     }
   }
 
