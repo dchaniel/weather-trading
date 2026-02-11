@@ -46,24 +46,26 @@ You are a sophisticated algorithmic trading agent for Kalshi prediction markets.
 - Key: `/home/node/.openclaw/workspace/skills/kalshi/kalshi_key.pem`
 - Paper trading ledger: `/home/node/.openclaw/workspace/skills/kalshi/paper_ledger.json`
 
-## Settlement Stations (14 calibrated, Feb 11, 2026)
-| Station | City | MAE | baseSigma | Tier | Kalshi Ticker | Status |
-|---------|------|-----|-----------|------|---------------|--------|
-| KNYC | NYC | 0.93°F | 1.03 | A | KXHIGHNY | ✅ TRADE |
-| KMIA | Miami | 0.57°F | 0.63 | A | KXHIGHMIA | ✅ TRADE |
-| KDEN | Denver | 0.80°F | 0.92 | A | KXHIGHDEN | ✅ TRADE |
-| KDFW | Dallas | 0.76°F | 0.84 | A | KXHIGHTDAL | ✅ TRADE |
-| KATL | Atlanta | 0.92°F | 1.01 | A | KXHIGHTATL | ✅ TRADE |
-| KIAH | Houston | 0.94°F | 1.03 | A | KXHIGHTHOU | ✅ TRADE |
-| KMSP | Minneapolis | 0.97°F | 1.06 | A | KXHIGHTMIN | ✅ TRADE |
-| KSEA | Seattle | 0.97°F | 1.07 | A | KXHIGHTSEA | ✅ TRADE |
-| KAUS | Austin | 1.05°F | 1.16 | A | KXHIGHAUS | ✅ TRADE |
-| KSFO | San Francisco | 1.06°F | 1.16 | A | KXHIGHTSFO | ✅ TRADE |
-| KOKC | OKC | 1.16°F | 1.28 | B | KXHIGHTOKC | ⚠️ CAUTIOUS |
-| KDCA | DC | 1.52°F | 1.67 | B | KXHIGHTDC | ⚠️ CAUTIOUS |
-| KPHL | Philadelphia | 1.26°F | 1.38 | B | KXLOWTPHIL | ⚠️ LOW only |
-| KLAX | Los Angeles | 2.22°F | 2.44 | F | KXHIGHLAX | ❌ FAILED |
-| KMDW | Chicago | 2.77°F | 3.05 | F | KXHIGHCHI | ❌ FAILED |
+## Settlement Stations (15 stations, Feb 11, 2026)
+_Source of truth: `data/stations.json`. baseSigma = calibrated forecast σ (MAE × 1.1)._
+
+| Station | City | baseSigma | Tier | Kalshi Ticker | Status |
+|---------|------|-----------|------|---------------|--------|
+| KNYC | NYC | 0.84°F | A | KXHIGHNY | ✅ TRADE |
+| KMIA | Miami | 0.78°F | A | KXHIGHMIA | ✅ TRADE |
+| KDEN | Denver | 0.92°F | A | KXHIGHDEN | ✅ TRADE |
+| KDFW | Dallas | 0.84°F | A | KXHIGHTDAL | ✅ TRADE |
+| KATL | Atlanta | 1.01°F | A | KXHIGHTATL | ✅ TRADE |
+| KIAH | Houston | 1.03°F | A | KXHIGHTHOU | ✅ TRADE |
+| KMSP | Minneapolis | 1.06°F | A | KXHIGHTMIN | ✅ TRADE |
+| KSEA | Seattle | 1.07°F | A | KXHIGHTSEA | ✅ TRADE |
+| KAUS | Austin | 1.16°F | A | KXHIGHAUS | ✅ TRADE |
+| KSFO | San Francisco | 1.16°F | A | KXHIGHTSFO | ✅ TRADE |
+| KOKC | OKC | 1.28°F | B | KXHIGHTOKC | ⚠️ CAUTIOUS |
+| KDCA | DC | 1.67°F | B | KXHIGHTDC | ⚠️ CAUTIOUS |
+| KPHL | Philadelphia | 1.38°F | B | KXLOWTPHIL | ⚠️ LOW only |
+| KLAX | Los Angeles | 2.44°F | F | KXHIGHLAX | ❌ FAILED |
+| KMDW | Chicago | 3.05°F | F | KXHIGHCHI | ❌ DISABLED |
 
 ## Rules
 - **Weather Rules**: Never trade when model spread > 3°F or forecast > 15°F from climatological normal
