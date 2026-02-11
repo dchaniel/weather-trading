@@ -88,7 +88,7 @@ KMDW removal reduces opportunity set but eliminates catastrophic risk.
 |---------|------|-----|-----------|------|---------------|--------|
 | KNYC | NYC | 0.93°F | 1.03 | A | KXHIGHNY | ✅ TRADE |
 | KMIA | Miami | 0.57°F | 0.63 | A | KXHIGHMIA | ✅ TRADE |
-| KDEN | Denver | 0.80°F | 0.88 | A | KXHIGHDEN | ✅ TRADE |
+| KDEN | Denver | 0.80°F | 0.92 | A | KXHIGHDEN | ✅ TRADE |
 | KDFW | Dallas | 0.76°F | 0.84 | A | KXHIGHTDAL | ✅ TRADE |
 | KATL | Atlanta | 0.92°F | 1.01 | A | KXHIGHTATL | ✅ TRADE |
 | KIAH | Houston | 0.94°F | 1.03 | A | KXHIGHTHOU | ✅ TRADE |

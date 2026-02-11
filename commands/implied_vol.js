@@ -36,13 +36,14 @@ const SERIES_MAP = {
   KPHL: 'KXLOWTPHIL',
 };
 
-// Low-temp series (same stations where we have kalshiTickerLow)
-const LOW_SERIES_MAP = {
-  KNYC: 'KXLOWTNYC',
-  KMDW: 'KXLOWTCHI',
-  KDEN: 'KXLOWTDEN',
-  KMIA: 'KXLOWTMIA',
-};
+// Low-temp series — derived from stations with kalshiTickerLow
+const LOW_SERIES_MAP = (() => {
+  const map = {};
+  for (const [k, v] of Object.entries(STATIONS)) {
+    if (v.kalshiTickerLow) map[k] = v.kalshiTickerLow;
+  }
+  return map;
+})();
 
 /**
  * Parse a threshold from a Kalshi temperature market.
@@ -309,6 +310,15 @@ Note: Market σ computed from mid-price. Edge calculations in
     return;
   }
 
+  // Summary header
+  const totalScanned = results.length + lowResults.length;
+  const tradeableCount = results.filter(r => r.isTradeable).length + lowResults.filter(r => r.isTradeable).length;
+  const withEdge = results.filter(r => r.isTradeable && r.netEdge > 0).length + lowResults.filter(r => r.isTradeable && r.netEdge > 0).length;
+  const goCount = results.filter(r => r.guardPass && r.tradeable).length;
+  const bestStation = [...results].filter(r => r.tradeable).sort((a, b) => b.gap - a.gap)[0];
+  console.log(`\n📈 ${totalScanned} stations scanned • ${tradeableCount} tradeable • ${withEdge} with edge • ${goCount} GO`);
+  if (bestStation) console.log(`   Best: ${bestStation.station} +${bestStation.gap.toFixed(1)}°F gap, ${bestStation.netEdge}¢ net edge`);
+
   // Display results with validation status and edge-after-costs
   console.log('\n  Station    Val? Forecast  Our σ   Mkt σ   Gap    Net Edge   Status');
   console.log('  ' + '─'.repeat(85));
@@ -317,17 +327,22 @@ Note: Market σ computed from mid-price. Edge calculations in
     const validationStatus = r.isValidated ? (r.isTradeable ? '✅' : '⚠️') : '❌';
     const validationLabel = r.isValidated ? (r.isTradeable ? 'VAL' : 'VAL*') : 'NO';
     
-    let edgeStatus;
+    let edgeStatus, edgeDisplay;
     if (!r.isValidated) {
       edgeStatus = '❌ UNVALIDATED';
+      edgeDisplay = '—';
     } else if (!r.isTradeable) {
       edgeStatus = '❌ UNTRADEABLE';
+      edgeDisplay = '—';
     } else if (r.netEdge <= 0) {
       edgeStatus = '❌ NO PROFIT';
+      edgeDisplay = r.netEdge + '¢';
     } else if (r.netEdge >= 2) {
       edgeStatus = '✅ STRONG';
+      edgeDisplay = r.netEdge + '¢';
     } else {
       edgeStatus = '⚠️ MARGINAL';
+      edgeDisplay = r.netEdge + '¢';
     }
 
     console.log(
@@ -335,7 +350,7 @@ Note: Market σ computed from mid-price. Edge calculations in
       `${String(r.ourSigma + '°F').padEnd(7)} ` +
       `${String(r.marketSigma + '°F').padEnd(7)} ` +
       `${String((r.gap >= 0 ? '+' : '') + r.gap + '°F').padEnd(7)} ` +
-      `${String(r.netEdge + '¢').padEnd(9)} ${edgeStatus}`
+      `${String(edgeDisplay).padEnd(9)} ${edgeStatus}`
     );
   }
   
@@ -354,18 +369,27 @@ Note: Market σ computed from mid-price. Edge calculations in
     console.log('  ' + '─'.repeat(75));
 
     for (const r of lowResults) {
-      let edgeStatus;
-      if (!r.isTradeable) edgeStatus = '❌ UNTRADEABLE';
-      else if (r.netEdge <= 0) edgeStatus = '❌ NO PROFIT';
-      else if (r.netEdge >= 2) edgeStatus = '✅ STRONG';
-      else edgeStatus = '⚠️ MARGINAL';
+      let edgeStatus, edgeDisplay;
+      if (!r.isTradeable) {
+        edgeStatus = '❌ UNTRADEABLE';
+        edgeDisplay = '—';
+      } else if (r.netEdge <= 0) {
+        edgeStatus = '❌ NO PROFIT';
+        edgeDisplay = r.netEdge + '¢';
+      } else if (r.netEdge >= 2) {
+        edgeStatus = '✅ STRONG';
+        edgeDisplay = r.netEdge + '¢';
+      } else {
+        edgeStatus = '⚠️ MARGINAL';
+        edgeDisplay = r.netEdge + '¢';
+      }
 
       console.log(
         `  ${r.station.padEnd(10)} ${String(r.forecastLow + '°F').padEnd(9)} ` +
         `${String(r.ourSigma + '°F').padEnd(7)} ` +
         `${String(r.marketSigma + '°F').padEnd(7)} ` +
         `${String((r.gap >= 0 ? '+' : '') + r.gap + '°F').padEnd(7)} ` +
-        `${String(r.netEdge + '¢').padEnd(9)} ${edgeStatus}`
+        `${String(edgeDisplay).padEnd(9)} ${edgeStatus}`
       );
     }
   }

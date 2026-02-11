@@ -85,7 +85,10 @@ Examples:
   const allRecs = [];
   const stationMarketSigma = {};
 
+  let stationIdx = 0;
   for (const st of activeStations) {
+    stationIdx++;
+    process.stdout.write(`\r  ⏳ Scanning ${st} (${stationIdx}/${activeStations.length})...`);
     for (const date of dates) {
       try {
         const fc = await forecast(st, date);
@@ -119,6 +122,8 @@ Examples:
     }
   }
 
+  process.stdout.write(`\r  ✅ Scanned ${activeStations.length} stations × ${dates.length} days          \n`);
+
   // ── Flights ──────────────────────────────────────────────────────────
   const flightRecs = await fetchFlightRecs(dates, customMinEdge, ledger.balance);
 
@@ -140,11 +145,16 @@ Examples:
     });
     rec.guardPass = guardResult.pass;
     rec.guardReasons = guardResult.reasons;
+    rec.guardWarnings = guardResult.warnings || [];
     logDecision(rec, guardResult);
   }
 
   const passedWeather = allRecs.filter(r => r.guardPass);
   const blockedWeather = allRecs.filter(r => !r.guardPass);
+
+  // Show calibration warnings (non-blocking)
+  const allWarnings = [...new Set(allRecs.flatMap(r => r.guardWarnings || []))];
+  for (const w of allWarnings) console.log(`\n  ${w}`);
 
   if (blockedWeather.length > 0) {
     console.log(`\n  🚫 ${blockedWeather.length} weather trade(s) blocked by guards:`);
