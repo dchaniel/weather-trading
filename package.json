@@ -1,12 +1,18 @@
 {
-  "name": "weather-trading",
-  "version": "1.0.0",
-  "description": "Multi-source weather forecast pipeline for Kalshi temperature markets",
+  "name": "kalshi-trading-platform",
+  "version": "2.0.0",
+  "description": "Multi-strategy algorithmic trading platform for Kalshi prediction markets",
   "type": "module",
+  "bin": {
+    "kalshi": "./bin/kalshi.js",
+    "wt": "./bin/wt.js"
+  },
   "scripts": {
-    "forecast": "node forecast.js",
-    "observe": "node observe.js",
-    "backtest": "node backtest.js"
+    "forecast": "node bin/kalshi.js forecast",
+    "observe": "node bin/kalshi.js observe",
+    "backtest": "node bin/kalshi.js backtest",
+    "markets": "node bin/kalshi.js markets",
+    "recommend": "node bin/kalshi.js recommend"
   },
   "license": "MIT"
 }

@@ -1,0 +1,24 @@
+{
+  "risk": {
+    "maxOpenPositions": 20,
+    "maxDailyLossPct": 0.1,
+    "maxPositionPct": 0.1,
+    "maxStationExposure": 0.2,
+    "drawdownPct": 0.3,
+    "maxPerStation": 5
+  },
+  "guard": {
+    "hardMaxContracts": 50,
+    "maxTradesPerDayPerStation": 3,
+    "minSigmaGap": 1.5,
+    "maxModelSpread": 4,
+    "maxBidAskSpread": 0.1,
+    "climOutlierRange": 15
+  },
+  "execution": {
+    "autoMaxContracts": 20,
+    "kellyFraction": 0.25,
+    "transactionCost": 0.04
+  },
+  "_comment": "Paper trading config — loosen limits for learning. Edit values and they take effect on next run."
+}

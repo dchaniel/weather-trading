@@ -1,0 +1,19 @@
+Daily weather trading workflow (run at 6am ET / 11:00 UTC):
+
+1. Collect IV snapshot:
+   node bin/wt.js collect-iv --silent
+
+2. Generate guard-checked recommendations:
+   node bin/wt.js recommend --save
+
+3. Run daily briefing:
+   node bin/wt.js daily
+
+4. Track performance:
+   node bin/wt.js track
+
+This should be set up as a cron job or OpenClaw scheduled task.
+The --save flag on recommend writes to data/pending.json for review.
+All recommendations pass through lib/core/guard.js before being shown.
+Only trades that pass ALL guards (station whitelist, IV check, spread check,
+1 trade/day limit, position size cap, clim outlier check) are recommended.

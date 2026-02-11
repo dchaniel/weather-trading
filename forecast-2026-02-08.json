@@ -4,52 +4,47 @@
     "KNYC": {
       "forecasts": [
         {
-          "source": "NWS",
-          "high_f": 17,
-          "description": "Sunny"
-        },
-        {
           "source": "GFS (Open-Meteo)",
-          "high_f": 16.1,
+          "high_f": 18.4,
           "low_f": 2.2
         },
         {
           "source": "ECMWF (Open-Meteo)",
-          "high_f": 11.5,
-          "low_f": -0.7
+          "high_f": 11.1,
+          "low_f": 0.7
         }
       ],
-      "spread": 5.5,
-      "mean": 14.9,
-      "median": 16.1,
-      "adjustedMean": 13.9,
-      "climDeviation": -26.1,
+      "spread": 7.3,
+      "mean": 14.8,
+      "median": 18.4,
+      "adjustedMean": 13.8,
+      "climDeviation": -26.2,
       "climNormalHigh": 40,
       "tradeable": false,
       "warnings": [
         "CLIM_OUTLIER"
       ],
-      "reason": "Forecast 13.9°F is 26.1°F from normal (40°F) — climatological outlier"
+      "reason": "Forecast 13.8°F is 26.3°F from normal (40°F) — climatological outlier"
     },
     "KMDW": {
       "forecasts": [
         {
           "source": "NWS",
           "high_f": 30,
-          "description": "Partly Sunny"
+          "description": "Cloudy"
         },
         {
           "source": "GFS (Open-Meteo)",
-          "high_f": 31,
+          "high_f": 30.9,
           "low_f": 21
         },
         {
           "source": "ECMWF (Open-Meteo)",
           "high_f": 28.5,
-          "low_f": 20.1
+          "low_f": 20.4
         }
       ],
-      "spread": 2.5,
+      "spread": 2.4,
       "mean": 29.8,
       "median": 30,
       "adjustedMean": 31.8,
@@ -57,31 +52,26 @@
       "climNormalHigh": 36,
       "tradeable": false,
       "warnings": [],
-      "reason": "Model spread 2.5°F exceeds 2°F threshold"
+      "reason": "Model spread 2.4°F exceeds 2°F threshold"
     },
     "KMIA": {
       "forecasts": [
         {
-          "source": "NWS",
-          "high_f": 72,
-          "description": "Sunny"
-        },
-        {
           "source": "GFS (Open-Meteo)",
-          "high_f": 71.6,
+          "high_f": 72.7,
           "low_f": 51.9
         },
         {
           "source": "ECMWF (Open-Meteo)",
-          "high_f": 71.9,
-          "low_f": 52.1
+          "high_f": 72.3,
+          "low_f": 52.7
         }
       ],
       "spread": 0.4,
-      "mean": 71.8,
-      "median": 71.9,
-      "adjustedMean": 71.8,
-      "climDeviation": -6.2,
+      "mean": 72.5,
+      "median": 72.7,
+      "adjustedMean": 72.5,
+      "climDeviation": -5.5,
       "climNormalHigh": 78,
       "tradeable": true,
       "warnings": []
@@ -91,30 +81,30 @@
         {
           "source": "NWS",
           "high_f": 69,
-          "description": "Sunny"
+          "description": "Mostly Sunny"
         },
         {
           "source": "GFS (Open-Meteo)",
-          "high_f": 64.7,
+          "high_f": 64.1,
           "low_f": 37.3
         },
         {
           "source": "ECMWF (Open-Meteo)",
-          "high_f": 62.5,
-          "low_f": 39.3
+          "high_f": 63.8,
+          "low_f": 40.6
         }
       ],
-      "spread": 6.5,
-      "mean": 65.4,
-      "median": 64.7,
-      "adjustedMean": 65.4,
-      "climDeviation": 20.4,
+      "spread": 5.2,
+      "mean": 65.6,
+      "median": 64.1,
+      "adjustedMean": 65.6,
+      "climDeviation": 20.6,
       "climNormalHigh": 45,
       "tradeable": false,
       "warnings": [
         "CLIM_OUTLIER"
       ],
-      "reason": "Forecast 65.4°F is 20.4°F from normal (45°F) — climatological outlier"
+      "reason": "Forecast 65.6°F is 20.6°F from normal (45°F) — climatological outlier"
     }
   }
 }

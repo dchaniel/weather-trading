@@ -1,0 +1,550 @@
+{
+  "KNYC": {
+    "stats": {
+      "mae": 1.2,
+      "bias": -0.1,
+      "stdDev": 1.5,
+      "gfsMae": 1.8,
+      "ecmwfMae": 1.1,
+      "count": 184
+    },
+    "top5": [
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.33,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 38,
+        "wins": 27,
+        "winRate": 71.1,
+        "totalPnL": 369,
+        "returnPct": 36.9,
+        "maxDrawdown": 8.1,
+        "sharpe": 6.3,
+        "monthlyPnL": {
+          "2025-07": -37,
+          "2025-08": 165,
+          "2025-09": 5,
+          "2025-10": -3,
+          "2025-11": 92,
+          "2025-12": 147
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 36,
+        "wins": 25,
+        "winRate": 69.4,
+        "totalPnL": 260,
+        "returnPct": 26,
+        "maxDrawdown": 7.1,
+        "sharpe": 6.1,
+        "monthlyPnL": {
+          "2025-07": -38,
+          "2025-08": 113,
+          "2025-09": 17,
+          "2025-10": -2,
+          "2025-11": 77,
+          "2025-12": 93
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 3,
+          "climFilter": 15
+        },
+        "totalTrades": 33,
+        "wins": 23,
+        "winRate": 69.7,
+        "totalPnL": 216,
+        "returnPct": 21.6,
+        "maxDrawdown": 5.9,
+        "sharpe": 5.8,
+        "monthlyPnL": {
+          "2025-07": -43,
+          "2025-08": 127,
+          "2025-09": 4,
+          "2025-10": -2,
+          "2025-11": 38,
+          "2025-12": 92
+        }
+      },
+      {
+        "params": {
+          "sigma": 4,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 48,
+        "wins": 32,
+        "winRate": 66.7,
+        "totalPnL": 301,
+        "returnPct": 30.1,
+        "maxDrawdown": 6.8,
+        "sharpe": 5.5,
+        "monthlyPnL": {
+          "2025-07": 8,
+          "2025-08": 118,
+          "2025-09": 1,
+          "2025-10": -20,
+          "2025-11": 41,
+          "2025-12": 153
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 29,
+        "wins": 20,
+        "winRate": 69,
+        "totalPnL": 175,
+        "returnPct": 17.5,
+        "maxDrawdown": 5.9,
+        "sharpe": 5.3,
+        "monthlyPnL": {
+          "2025-07": -43,
+          "2025-08": 109,
+          "2025-09": 17,
+          "2025-10": 11,
+          "2025-11": -2,
+          "2025-12": 83
+        }
+      }
+    ]
+  },
+  "KMDW": {
+    "stats": {
+      "mae": 0.9,
+      "bias": 0.2,
+      "stdDev": 1.2,
+      "gfsMae": 1.4,
+      "ecmwfMae": 0.6,
+      "count": 184
+    },
+    "top5": [
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 34,
+        "wins": 26,
+        "winRate": 76.5,
+        "totalPnL": 360,
+        "returnPct": 36,
+        "maxDrawdown": 6,
+        "sharpe": 10.1,
+        "monthlyPnL": {
+          "2025-07": 50,
+          "2025-08": 70,
+          "2025-09": 41,
+          "2025-10": 1,
+          "2025-11": 150,
+          "2025-12": 48
+        }
+      },
+      {
+        "params": {
+          "sigma": 2.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 18,
+        "wins": 13,
+        "winRate": 72.2,
+        "totalPnL": 139,
+        "returnPct": 13.9,
+        "maxDrawdown": 3.3,
+        "sharpe": 7.4,
+        "monthlyPnL": {
+          "2025-07": 15,
+          "2025-08": 55,
+          "2025-09": 50,
+          "2025-10": -4,
+          "2025-11": 21,
+          "2025-12": 2
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 3,
+          "climFilter": 15
+        },
+        "totalTrades": 41,
+        "wins": 29,
+        "winRate": 70.7,
+        "totalPnL": 340,
+        "returnPct": 34,
+        "maxDrawdown": 6,
+        "sharpe": 7.4,
+        "monthlyPnL": {
+          "2025-07": 105,
+          "2025-08": 26,
+          "2025-09": 41,
+          "2025-10": 1,
+          "2025-11": 142,
+          "2025-12": 25
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 43,
+        "wins": 30,
+        "winRate": 69.8,
+        "totalPnL": 350,
+        "returnPct": 35,
+        "maxDrawdown": 6.1,
+        "sharpe": 7,
+        "monthlyPnL": {
+          "2025-07": 105,
+          "2025-08": 26,
+          "2025-09": 82,
+          "2025-10": 0,
+          "2025-11": 131,
+          "2025-12": 6
+        }
+      },
+      {
+        "params": {
+          "sigma": 3,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 34,
+        "wins": 23,
+        "winRate": 67.6,
+        "totalPnL": 236,
+        "returnPct": 23.6,
+        "maxDrawdown": 7.2,
+        "sharpe": 6.4,
+        "monthlyPnL": {
+          "2025-07": 32,
+          "2025-08": 41,
+          "2025-09": 27,
+          "2025-10": 1,
+          "2025-11": 111,
+          "2025-12": 24
+        }
+      }
+    ]
+  },
+  "KMIA": {
+    "stats": {
+      "mae": 0.9,
+      "bias": 0.1,
+      "stdDev": 1.2,
+      "gfsMae": 1.5,
+      "ecmwfMae": 1.2,
+      "count": 184
+    },
+    "top5": [
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 36,
+        "wins": 21,
+        "winRate": 58.3,
+        "totalPnL": 114,
+        "returnPct": 11.4,
+        "maxDrawdown": 6.8,
+        "sharpe": 2.6,
+        "monthlyPnL": {
+          "2025-07": 77,
+          "2025-08": 19,
+          "2025-09": 55,
+          "2025-10": 0,
+          "2025-11": 42,
+          "2025-12": -79
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 17,
+        "wins": 9,
+        "winRate": 52.9,
+        "totalPnL": 24,
+        "returnPct": 2.4,
+        "maxDrawdown": 3.3,
+        "sharpe": 1.3,
+        "monthlyPnL": {
+          "2025-07": 20,
+          "2025-08": -5,
+          "2025-09": 19,
+          "2025-10": 0,
+          "2025-11": 19,
+          "2025-12": -29
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 3,
+          "climFilter": 15
+        },
+        "totalTrades": 28,
+        "wins": 15,
+        "winRate": 53.6,
+        "totalPnL": 32,
+        "returnPct": 3.2,
+        "maxDrawdown": 5.7,
+        "sharpe": 1,
+        "monthlyPnL": {
+          "2025-07": 35,
+          "2025-08": -1,
+          "2025-09": 18,
+          "2025-10": 0,
+          "2025-11": 38,
+          "2025-12": -58
+        }
+      },
+      {
+        "params": {
+          "sigma": 3.5,
+          "minEdge": 0.05,
+          "kellyFraction": 0.33,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 31,
+        "wins": 16,
+        "winRate": 51.6,
+        "totalPnL": 18,
+        "returnPct": 1.8,
+        "maxDrawdown": 12.6,
+        "sharpe": 0.4,
+        "monthlyPnL": {
+          "2025-07": 101,
+          "2025-08": -9,
+          "2025-09": -26,
+          "2025-10": 0,
+          "2025-11": 50,
+          "2025-12": -98
+        }
+      },
+      {
+        "params": {
+          "sigma": 2,
+          "minEdge": 0.08,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 0,
+        "wins": 0,
+        "winRate": 0,
+        "totalPnL": 0,
+        "returnPct": 0,
+        "maxDrawdown": 0,
+        "sharpe": 0,
+        "monthlyPnL": {
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0
+        }
+      }
+    ]
+  },
+  "KDEN": {
+    "stats": {
+      "mae": 1.1,
+      "bias": 0,
+      "stdDev": 1.5,
+      "gfsMae": 1.5,
+      "ecmwfMae": 1.1,
+      "count": 184
+    },
+    "top5": [
+      {
+        "params": {
+          "sigma": 4,
+          "minEdge": 0.05,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 47,
+        "wins": 21,
+        "winRate": 44.7,
+        "totalPnL": 314,
+        "returnPct": 31.4,
+        "maxDrawdown": 14.9,
+        "sharpe": 1.6,
+        "monthlyPnL": {
+          "2025-07": -49,
+          "2025-08": -28,
+          "2025-09": 78,
+          "2025-10": -34,
+          "2025-11": 391,
+          "2025-12": -44
+        }
+      },
+      {
+        "params": {
+          "sigma": 4,
+          "minEdge": 0.05,
+          "kellyFraction": 0.33,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 44,
+        "wins": 17,
+        "winRate": 38.6,
+        "totalPnL": 164,
+        "returnPct": 16.4,
+        "maxDrawdown": 32.6,
+        "sharpe": 0.8,
+        "monthlyPnL": {
+          "2025-07": -165,
+          "2025-08": -34,
+          "2025-09": 73,
+          "2025-10": -68,
+          "2025-11": 409,
+          "2025-12": -51
+        }
+      },
+      {
+        "params": {
+          "sigma": 2,
+          "minEdge": 0.08,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 2,
+          "climFilter": 15
+        },
+        "totalTrades": 0,
+        "wins": 0,
+        "winRate": 0,
+        "totalPnL": 0,
+        "returnPct": 0,
+        "maxDrawdown": 0,
+        "sharpe": 0,
+        "monthlyPnL": {
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0
+        }
+      },
+      {
+        "params": {
+          "sigma": 2,
+          "minEdge": 0.08,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 3,
+          "climFilter": 15
+        },
+        "totalTrades": 0,
+        "wins": 0,
+        "winRate": 0,
+        "totalPnL": 0,
+        "returnPct": 0,
+        "maxDrawdown": 0,
+        "sharpe": 0,
+        "monthlyPnL": {
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0
+        }
+      },
+      {
+        "params": {
+          "sigma": 2,
+          "minEdge": 0.08,
+          "kellyFraction": 0.25,
+          "maxPosition": 0.1,
+          "spreadFilter": 5,
+          "climFilter": 15
+        },
+        "totalTrades": 0,
+        "wins": 0,
+        "winRate": 0,
+        "totalPnL": 0,
+        "returnPct": 0,
+        "maxDrawdown": 0,
+        "sharpe": 0,
+        "monthlyPnL": {
+          "2025-07": 0,
+          "2025-08": 0,
+          "2025-09": 0,
+          "2025-10": 0,
+          "2025-11": 0,
+          "2025-12": 0
+        }
+      }
+    ]
+  }
+}

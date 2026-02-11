@@ -1,82 +1,76 @@
-# Weather Trading Pipeline
+# Kalshi Multi-Strategy Trading System
 
-Multi-source weather forecast pipeline for trading Kalshi temperature markets. Built after Day 1 losses where single-model forecasts were **15-25°F above actuals**.
+Algorithmic trading system for [Kalshi](https://kalshi.com) prediction markets. Exploits the gap between calibrated weather forecast accuracy and market-implied volatility, plus crypto momentum/volatility signals.
 
-## The Problem
-
-On Feb 8, 2026, we lost money trading temperature contracts because:
-- Relied on a single forecast source
-- Didn't sanity-check against climatological normals
-- Traded Denver 66°F in February (normal: 45°F) — a 20°F outlier
-- Traded LA >82°F in February — extreme outlier
-
-## The Solution
-
-This pipeline cross-references **multiple forecast sources** and rejects outliers:
-
-### Data Sources
-1. **NWS Point Forecast** — Official National Weather Service gridpoint forecasts
-2. **GFS** (via Open-Meteo) — NOAA's Global Forecast System
-3. **ECMWF** (via Open-Meteo) — European model
-
-### Safety Checks
-- **Multi-model consensus**: Only trade when model spread < 2°F
-- **Climatological sanity**: Reject forecasts >15°F from monthly normals
-- **Station bias correction**: Account for microclimate effects (Central Park shade, Midway urban heat island)
-
-### Position Sizing
-- **Quarter-Kelly** until calibrated over 50+ trades
-- Max 5% bankroll per position
-- Must have >5% edge to trade
-
-## Settlement Stations
-
-| Station | Location | Notes |
-|---------|----------|-------|
-| KNYC | Central Park, NYC | ~1°F cooler than city (park microclimate) |
-| KMDW | Chicago Midway | +2°F urban heat island |
-| KMIA | Miami International | Sea breeze effects |
-| KDEN | Denver International | Chinook events, inversions |
-
-## Usage
+## Quick Start
 
 ```bash
-# Get forecasts for all stations (today)
-node forecast.js
-
-# Get forecast for specific station and date
-node forecast.js KDEN 2026-02-09
-
-# Fetch actual observations (for backtesting)
-node observe.js KNYC 2026-02-08
-
-# Compare forecast vs actual
-node backtest.js 2026-02-08
+node bin/kalshi.js --help          # Show all commands
+node bin/kalshi.js iv              # Weather implied volatility analysis
+node bin/kalshi.js recommend       # Trade recommendations with sizing
+node bin/kalshi.js crypto          # Crypto strategy analysis
+node bin/kalshi.js daily           # Daily multi-strategy briefing
+node bin/kalshi.js perf            # Performance dashboard
 ```
 
-## Output
+## Key Commands
 
-Each run produces a JSON file (`forecast-YYYY-MM-DD.json`) with:
-- Individual model forecasts
-- Consensus mean/median
-- Model spread
-- Climatological deviation
-- Tradeable/no-trade decision with reasoning
+| Command | Description |
+|---------|-------------|
+| `iv` | Compare forecast σ vs market implied σ — find mispriced contracts |
+| `recommend` | Score opportunities, run guards, size with quarter-Kelly |
+| `crypto` | GARCH + momentum analysis for BTC/ETH prediction markets |
+| `trade` | Execute trades, manage positions, settle contracts |
+| `daily` | Morning briefing: balance, positions, weather + crypto outlook |
+| `perf` | Win rate, P&L, Sharpe ratio, station breakdown |
+| `calibrate` | Validate forecast accuracy against historical observations |
+| `health` | System health: API connectivity, data integrity, balance |
+| `data` | Collect IV history, snapshots, observations for analysis |
 
 ## Architecture
 
 ```
-stations.js   — Station metadata, climatological normals, bias corrections
-forecast.js   — Multi-source forecast fetcher + consensus engine
-observe.js    — NWS observation fetcher for actuals
-backtest.js   — Forecast vs actual comparison
-sizing.js     — Quarter-Kelly position sizing
+bin/kalshi.js          CLI entry point
+commands/              Command handlers (iv, recommend, trade, crypto, daily, perf, ...)
+lib/
+  weather/             Forecast pipeline, station config, market matching, ensemble
+  crypto/              GARCH modeling, momentum signals, order book analysis
+  core/                Sizing (Kelly), guards, risk limits, trade execution, history
+  kalshi/              API client, market parsing
+  backtest/            Walk-forward backtesting engine, implied vol computation
+data/                  Paper ledger, IV history, JSONL audit trail
 ```
 
-## Rules (Hard)
+## Strategy
 
-1. **Never trade** when model spread > 2°F
-2. **Never trade** when forecast is >15°F from climatological normal (unless ALL models agree AND clear meteorological driver exists)
-3. **Always** form probability estimate BEFORE looking at market price
-4. **Quarter-Kelly** sizing, max 5% bankroll per position
-5. **Favor intraday scalps** over settlement holds while calibrating
+**Weather**: NWS/GFS/ECMWF forecasts have sub-1°F MAE for key stations, while Kalshi markets price 3-4°F σ. We estimate probabilities using Student-t (ν=5) for fat tails, then trade when net edge exceeds transaction costs (4¢/contract).
+
+**Crypto**: GARCH volatility modeling + momentum signals on BTC/ETH prediction markets. Requires ≥5% edge at executable prices.
+
+**Risk Management**: Quarter-Kelly sizing, 9 independent pre-trade guards (σ gap, spread filter, climatological outlier, daily limits, correlation), $800 drawdown circuit breaker.
+
+## Status
+
+📊 **Paper trading** — $1,000 starting balance, 88.9% win rate (9 settled trades)
+
+Not yet live. Accumulating data and validating edge persistence before real capital deployment.
+
+## Settlement
+
+Trades settle automatically via `kalshi data settle <date>`:
+1. Fetches actual observed high temperature from NWS for the settlement station
+2. Compares against contract threshold to determine win/loss
+3. Updates paper ledger with P&L and marks trades as settled
+4. Records observation data to `data/history/observations.jsonl`
+
+Manual settlement: `kalshi trade settle <date>` with NWS cross-verification.
+
+## Dependencies
+
+Zero external dependencies. Pure Node.js (v22+).
+
+## Configuration
+
+- Kalshi API key: `~/.openclaw/workspace/skills/kalshi/kalshi_key.pem`
+- Paper ledger: `~/.openclaw/workspace/skills/kalshi/paper_ledger.json`
+- Set `LIVE_TRADING=1` to enable real order placement (use with caution)
