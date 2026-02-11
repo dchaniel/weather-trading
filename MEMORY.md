@@ -6,6 +6,8 @@
 - Run in rounds until all scores ≥ 95. Fresh reviewers each round.
 - Daniel's preference: this is the DEFAULT approach for complex work.
 - **95 MEANS 95.** Do not declare victory at 94 or 92. Hit the actual target or keep going.
+- **NEVER stop early.** Every DRI must spawn reviewers AND verify scores ≥ 95 before reporting done. If a DRI can't spawn reviewers, the main agent MUST spawn them and loop until verified. No manual fixes without re-review. No "should be good enough." No reporting done without verified scores. Daniel catches you slacking = you failed.
+- **DRI completion checklist**: (1) Code done (2) Reviewers spawned (3) All scores verified ≥ 95 (4) If any < 95, fix and re-review (5) Only THEN report done. Skipping any step is unacceptable.
 
 ## Project Rebrand (2026-02-09)
 - Renamed from "Weather Trading" / `wt` to "Kalshi" / `kalshi` CLI

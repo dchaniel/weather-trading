@@ -4,6 +4,13 @@
 
 Use a **3+1 agent review loop** for any serious development work. Don't stop until scores converge at 95+.
 
+### ABSOLUTE RULES
+1. **Never report "done" without verified reviewer scores ≥ 95.** No exceptions.
+2. **If a DRI can't spawn reviewers, escalate to main agent** — main agent MUST spawn them and loop.
+3. **Manual fixes require re-review.** You don't get to fix something yourself and assume it's fine.
+4. **"Close enough" does not exist.** 94 is not 95. 88 is not 95. Run the loop.
+5. **The human should never have to ask "did you stop?"** — if they do, you failed.
+
 ## The Agents
 
 ### 1. Coding Agent
