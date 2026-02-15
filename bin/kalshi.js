@@ -4,6 +4,20 @@
  * Algorithmic trading across Kalshi prediction markets: weather, crypto, and more.
  */
 
+import { readFileSync } from 'fs';
+import { join, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+// Load .env from project root
+try {
+  const root = join(dirname(fileURLToPath(import.meta.url)), '..');
+  const envFile = readFileSync(join(root, '.env'), 'utf8');
+  for (const line of envFile.split('\n')) {
+    const m = line.match(/^([A-Z_][A-Z0-9_]*)=(.*)$/);
+    if (m && !process.env[m[1]]) process.env[m[1]] = m[2].trim();
+  }
+} catch {}
+
 const [,, command, ...args] = process.argv;
 
 const COMMANDS = {

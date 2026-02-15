@@ -125,16 +125,24 @@ Examples:
   process.stdout.write(`\r  ✅ Scanned ${activeStations.length} stations × ${dates.length} days          \n`);
 
   // ── Flights ──────────────────────────────────────────────────────────
-  const flightRecs = await fetchFlightRecs(dates, customMinEdge, ledger.balance);
+  const flightRecs = await withTimeout(fetchFlightRecs(dates, customMinEdge, ledger.balance), 20000, 'Flights').catch(e => {
+    console.log(`\n✈️  FLIGHTS\n` + '─'.repeat(50)); console.log(`  ⚠ ${e.message}`); return [];
+  });
 
   // ── Precipitation ────────────────────────────────────────────────────
-  const precipRecs = await fetchPrecipRecs(ledger.balance);
+  const precipRecs = await withTimeout(fetchPrecipRecs(ledger.balance), 20000, 'Precipitation').catch(e => {
+    console.log(`\n🌧️  PRECIPITATION\n` + '─'.repeat(50)); console.log(`  ⚠ ${e.message}`); return [];
+  });
 
   // ── Crypto ───────────────────────────────────────────────────────────
-  const cryptoRecs = await fetchCryptoRecs();
+  const cryptoRecs = await withTimeout(fetchCryptoRecs(), 20000, 'Crypto').catch(e => {
+    console.log(`\n₿  CRYPTO\n` + '─'.repeat(50)); console.log(`  ⚠ ${e.message}`); return [];
+  });
 
   // ── Gas ─────────────────────────────────────────────────────────────
-  const gasRecs = await fetchGasRecs();
+  const gasRecs = await withTimeout(fetchGasRecs(), 20000, 'Gas').catch(e => {
+    console.log('\n⛽ GAS\n' + '─'.repeat(50)); console.log(`  ⚠ ${e.message}`); return [];
+  });
 
   // ── Run guards on weather recs ────────────────────────────────────────
   for (const rec of allRecs) {
@@ -182,6 +190,14 @@ Examples:
 }
 
 // ── Flights fetcher ───────────────────────────────────────────────────
+/** Race a promise against a timeout — returns fallback on timeout */
+function withTimeout(promise, ms, label) {
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => setTimeout(() => reject(new Error(`${label} timed out after ${ms / 1000}s`)), ms))
+  ]);
+}
+
 async function fetchFlightRecs(dates, minEdge, balance) {
   const recs = [];
   try {
