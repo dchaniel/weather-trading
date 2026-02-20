@@ -40,12 +40,14 @@
       "12": 32
     },
     "bias": -1,
-    "baseSigma": 0.84,
+    "baseSigma": 2,
     "baseSigmaLow": 0.9,
     "ecmwfMAE": 0.75,
     "gfsMAE": 0.8,
     "tier": "A",
-    "correlationGroup": "northeast"
+    "correlationGroup": "northeast",
+    "currentMAE": 1,
+    "currentStdDev": 1.3
   },
   "KMDW": {
     "name": "Chicago Midway",
@@ -136,11 +138,13 @@
       "12": 63
     },
     "bias": 0,
-    "baseSigma": 0.78,
+    "baseSigma": 2,
     "baseSigmaLow": 0.82,
     "ecmwfMAE": 0.65,
     "gfsMAE": 0.75,
-    "tier": "A"
+    "tier": "A",
+    "currentMAE": 0.6,
+    "currentStdDev": 0.8
   },
   "KDEN": {
     "name": "Denver International",
@@ -183,11 +187,13 @@
       "12": 17
     },
     "bias": 0,
-    "baseSigma": 0.92,
+    "baseSigma": 2,
     "baseSigmaLow": 1.05,
     "ecmwfMAE": 0.8,
     "gfsMAE": 0.9,
-    "tier": "A"
+    "tier": "A",
+    "currentMAE": 0.9,
+    "currentStdDev": 1.3
   },
   "KIAH": {
     "name": "Houston Intercontinental",
@@ -229,12 +235,14 @@
       "12": 44
     },
     "bias": 0,
-    "baseSigma": 1.03,
+    "baseSigma": 2,
     "baseSigmaLow": 1.15,
     "ecmwfMAE": 0.78,
     "gfsMAE": 1.8,
     "tier": "A",
-    "correlationGroup": "texas_oklahoma"
+    "correlationGroup": "texas_oklahoma",
+    "currentMAE": 1,
+    "currentStdDev": 1.3
   },
   "KATL": {
     "name": "Atlanta Hartsfield",
@@ -276,11 +284,13 @@
       "12": 36
     },
     "bias": 0,
-    "baseSigma": 1.01,
+    "baseSigma": 2,
     "baseSigmaLow": 1.12,
     "ecmwfMAE": 0.82,
     "gfsMAE": 1.68,
-    "tier": "A"
+    "tier": "A",
+    "currentMAE": 1,
+    "currentStdDev": 1.2
   },
   "KDFW": {
     "name": "Dallas/Fort Worth",
@@ -322,12 +332,14 @@
       "12": 38
     },
     "bias": 0,
-    "baseSigma": 0.84,
+    "baseSigma": 2,
     "baseSigmaLow": 0.95,
     "ecmwfMAE": 1.06,
     "gfsMAE": 1.69,
     "tier": "A",
-    "correlationGroup": "texas_oklahoma"
+    "correlationGroup": "texas_oklahoma",
+    "currentMAE": 0.8,
+    "currentStdDev": 1
   },
   "KLAX": {
     "name": "Los Angeles International",
@@ -369,7 +381,7 @@
       "12": 49
     },
     "bias": 2,
-    "baseSigma": 2.44,
+    "baseSigma": 2.94,
     "baseSigmaLow": 2.55,
     "ecmwfMAE": 2.05,
     "gfsMAE": 2.95,
@@ -417,12 +429,14 @@
       "12": 44
     },
     "bias": 0,
-    "baseSigma": 1.16,
+    "baseSigma": 2,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 1.38,
     "gfsMAE": 1.17,
     "tier": "A",
-    "correlationGroup": "west_coast"
+    "correlationGroup": "west_coast",
+    "currentMAE": 1,
+    "currentStdDev": 1.3
   },
   "KSEA": {
     "name": "Seattle-Tacoma International",
@@ -464,12 +478,14 @@
       "12": 35
     },
     "bias": -1,
-    "baseSigma": 1.07,
+    "baseSigma": 2,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.81,
     "gfsMAE": 1.46,
     "tier": "A",
-    "correlationGroup": "west_coast"
+    "correlationGroup": "west_coast",
+    "currentMAE": 0.8,
+    "currentStdDev": 1.1
   },
   "KOKC": {
     "name": "Oklahoma City Will Rogers",
@@ -511,12 +527,14 @@
       "12": 30
     },
     "bias": 1,
-    "baseSigma": 1.28,
+    "baseSigma": 2,
     "baseSigmaLow": 1.42,
     "ecmwfMAE": 0.71,
     "gfsMAE": 2.31,
     "tier": "B",
-    "correlationGroup": "texas_oklahoma"
+    "correlationGroup": "texas_oklahoma",
+    "currentMAE": 1.1,
+    "currentStdDev": 1.7
   },
   "KDCA": {
     "name": "Washington Reagan National",
@@ -558,12 +576,14 @@
       "12": 33
     },
     "bias": 1,
-    "baseSigma": 1.67,
+    "baseSigma": 2,
     "baseSigmaLow": 1.85,
     "ecmwfMAE": 1,
     "gfsMAE": 2.2,
     "tier": "B",
-    "correlationGroup": "northeast"
+    "correlationGroup": "northeast",
+    "currentMAE": 1.5,
+    "currentStdDev": 1.8
   },
   "KAUS": {
     "name": "Austin-Bergstrom International",
@@ -605,12 +625,14 @@
       "12": 41
     },
     "bias": 1,
-    "baseSigma": 1.16,
+    "baseSigma": 2,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 0.65,
     "gfsMAE": 1.76,
     "tier": "A",
-    "correlationGroup": "texas_oklahoma"
+    "correlationGroup": "texas_oklahoma",
+    "currentMAE": 1,
+    "currentStdDev": 1.3
   },
   "KMSP": {
     "name": "Minneapolis-Saint Paul International",
@@ -652,11 +674,13 @@
       "12": 12
     },
     "bias": 0,
-    "baseSigma": 1.06,
+    "baseSigma": 2,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.58,
     "gfsMAE": 1.9,
-    "tier": "A"
+    "tier": "A",
+    "currentMAE": 0.9,
+    "currentStdDev": 1.2
   },
   "KPHL": {
     "name": "Philadelphia International",
@@ -698,11 +722,20 @@
       "12": 30
     },
     "bias": 1,
-    "baseSigma": 1.38,
+    "baseSigma": 2,
     "baseSigmaLow": 1.52,
     "ecmwfMAE": 0.62,
     "gfsMAE": 2.21,
     "tier": "B",
-    "correlationGroup": "northeast"
+    "correlationGroup": "northeast",
+    "currentMAE": 1.2,
+    "currentStdDev": 1.6
+  },
+  "_recalibration": {
+    "date": "2026-02-20T17:23:23.526Z",
+    "lookbackDays": 90,
+    "minSigmaFloor": 2,
+    "updatedStations": 13,
+    "version": "1.0.0"
   }
 }
