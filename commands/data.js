@@ -9,9 +9,11 @@
  */
 
 import ivCommand from './implied_vol.js';
+import pipelineCommand from './pipeline.js';
 import { writeFileSync } from 'fs';
-import { STATIONS, resolveStation } from '../lib/weather/stations.js';
+import { STATIONS, resolveStation, getEffectiveSigma } from '../lib/weather/stations.js';
 import { fetchObservation } from '../lib/weather/observe.js';
+import { fetchHistoricalData } from '../lib/weather/historical.js';
 import { fetchJSON, today, round2, yesterday } from '../lib/core/utils.js';
 import { TRANSACTION_COST } from '../lib/core/sizing.js';
 import { 
@@ -31,6 +33,8 @@ export default async function(args) {
   }
 
   switch (subcommand) {
+    case 'pipeline':
+      return pipelineCommand(args.slice(1));
     case 'collect':
       return collectCmd(args.slice(1));
     case 'snapshot':
@@ -39,6 +43,8 @@ export default async function(args) {
       return historyCmd(args.slice(1));
     case 'observe':
       return observeCmd(args.slice(1));
+    case 'accuracy':
+      return accuracyCmd(args.slice(1));
     case 'settle':
       console.log('\n  ℹ️  `kalshi data settle` is deprecated. Use `kalshi trade settle` instead.\n');
       return;
@@ -92,7 +98,7 @@ async function collectCmd(args) {
     console.log(`  📁 data/history/*.jsonl\n`);
   }
 
-  return snapshot;
+  return results;
 }
 
 // settleCmd removed — use `kalshi trade settle` (delegates to lib/core/settlement.js)
@@ -272,6 +278,134 @@ async function historyCmd(args) {
   }
 }
 
+async function accuracyCmd(args) {
+  const stationArg = args[0];
+  const daysArg = parseInt(args[1]) || 60;
+  
+  console.log(`\n📊 FORECAST ACCURACY ANALYSIS`);
+  console.log(`═`.repeat(80));
+  
+  const endDate = new Date();
+  endDate.setDate(endDate.getDate() - 1); // Yesterday
+  const startDate = new Date(endDate);
+  startDate.setDate(startDate.getDate() - daysArg);
+  
+  const startStr = startDate.toISOString().slice(0, 10);
+  const endStr = endDate.toISOString().slice(0, 10);
+  
+  console.log(`Period: ${startStr} to ${endStr} (${daysArg} days)`);
+  console.log(`Comparing baseSigma (calibrated) vs realized forecast errors\n`);
+  
+  let stationsToAnalyze;
+  if (stationArg) {
+    const station = resolveStation(stationArg);
+    if (!station) {
+      console.error(`❌ Station not found: ${stationArg}`);
+      return;
+    }
+    stationsToAnalyze = [station];
+  } else {
+    stationsToAnalyze = Object.keys(STATIONS).filter(s => STATIONS[s].baseSigma != null);
+  }
+  
+  console.log(`Analyzing ${stationsToAnalyze.length} station(s)...\n`);
+  
+  const results = [];
+  for (const stationId of stationsToAnalyze) {
+    try {
+      console.log(`📍 ${stationId} (${STATIONS[stationId]?.name || stationId})`);
+      
+      const data = await fetchHistoricalData(stationId, startStr, endStr);
+      const station = STATIONS[stationId];
+      
+      if (data.errors.length < 10) {
+        console.log(`   ⚠️  Insufficient data: ${data.errors.length} samples\n`);
+        continue;
+      }
+      
+      const currentBaseSigma = station.baseSigma || 0;
+      const realizedMAE = data.stats.mae;
+      const realizedStdDev = data.stats.stdDev;
+      const currentMonth = new Date().getMonth() + 1;
+      const effectiveSigma = getEffectiveSigma(stationId, currentMonth, 0);
+      
+      // Calculate calibration accuracy
+      const maeRatio = realizedMAE / (station.ecmwfMAE || station.gfsMAE || 1);
+      const sigmaRatio = realizedStdDev / currentBaseSigma;
+      const effectiveVsRealized = effectiveSigma / realizedStdDev;
+      
+      // Determine status
+      let status = '✅ Well Calibrated';
+      if (sigmaRatio > 1.5) status = '⚠️ Too Tight (under-estimating σ)';
+      else if (sigmaRatio < 0.7) status = '⚠️ Too Loose (over-estimating σ)';
+      else if (Math.abs(sigmaRatio - 1.0) > 0.3) status = '⚡ Needs Attention';
+      
+      console.log(`   📈 Base σ: ${currentBaseSigma}°F`);
+      console.log(`   📊 Effective σ (seasonal): ${effectiveSigma}°F`);
+      console.log(`   🎯 Realized σ: ${realizedStdDev}°F`);
+      console.log(`   📏 Realized MAE: ${realizedMAE}°F`);
+      console.log(`   ⚖️  σ Ratio: ${sigmaRatio.toFixed(2)}x (realized/base)`);
+      console.log(`   🎲 Status: ${status}`);
+      console.log(`   📝 Samples: ${data.errors.length}\n`);
+      
+      results.push({
+        station: stationId,
+        name: station.name,
+        baseSigma: currentBaseSigma,
+        effectiveSigma,
+        realizedSigma: realizedStdDev,
+        realizedMAE,
+        sigmaRatio,
+        status: status.split(' ')[1] || 'OK', // Clean status
+        samples: data.errors.length
+      });
+      
+    } catch (error) {
+      console.log(`   ❌ Error: ${error.message}\n`);
+    }
+    
+    // Rate limiting
+    if (stationsToAnalyze.length > 1) {
+      await new Promise(resolve => setTimeout(resolve, 300));
+    }
+  }
+  
+  if (results.length > 1) {
+    // Summary table
+    console.log(`📋 SUMMARY`);
+    console.log(`─`.repeat(80));
+    console.log(`${'Station'.padEnd(8)} ${'Base σ'.padEnd(8)} ${'Real σ'.padEnd(8)} ${'Ratio'.padEnd(7)} ${'Status'.padEnd(15)} ${'Samples'.padEnd(8)}`);
+    console.log(`─`.repeat(80));
+    
+    for (const r of results.sort((a, b) => b.sigmaRatio - a.sigmaRatio)) {
+      const ratioStr = r.sigmaRatio.toFixed(2) + 'x';
+      console.log(`${r.station.padEnd(8)} ${r.baseSigma.toFixed(1).padEnd(8)} ${r.realizedSigma.toFixed(1).padEnd(8)} ${ratioStr.padEnd(7)} ${r.status.padEnd(15)} ${r.samples.toString().padEnd(8)}`);
+    }
+    
+    // Recommendations
+    console.log(`\n💡 RECOMMENDATIONS`);
+    console.log(`─`.repeat(80));
+    
+    const needsTightening = results.filter(r => r.sigmaRatio > 1.5);
+    const needsLoosening = results.filter(r => r.sigmaRatio < 0.7);
+    
+    if (needsTightening.length > 0) {
+      console.log(`🔧 Increase baseSigma (too tight): ${needsTightening.map(r => r.station).join(', ')}`);
+    }
+    if (needsLoosening.length > 0) {
+      console.log(`🔧 Decrease baseSigma (too loose): ${needsLoosening.map(r => r.station).join(', ')}`);
+    }
+    if (needsTightening.length === 0 && needsLoosening.length === 0) {
+      console.log(`✅ All stations appear well calibrated!`);
+    }
+    
+    console.log(`\n⚠️  Note: This analysis uses ${daysArg}-day recent data. Seasonal variation may affect accuracy.`);
+    console.log(`Consider running analysis across different seasons for robust calibration.`);
+  }
+  
+  console.log();
+}
+
 function showHelp() {
   console.log(`
 kalshi data — Unified data management
@@ -280,6 +414,7 @@ Commands:
   kalshi data collect [--silent]           Collect IV snapshot to history (for cron)
   kalshi data snapshot [--silent]          Full data snapshot to JSONL files ⭐
   kalshi data history [options]            Query historical data ⭐
+  kalshi data accuracy [station] [days]    Show forecast accuracy vs baseSigma ⭐
   kalshi data observe [station] [date]     Fetch actual weather observations
   kalshi data settle <date>                Auto-settlement with verification
 

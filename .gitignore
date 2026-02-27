@@ -1,0 +1,15 @@
+# Environment & secrets
+.env
+.env.*
+*.pem
+*.key
+
+# Data & cache
+data/cache/
+data/snapshots/
+
+# Dependencies
+node_modules/
+
+# OS
+.DS_Store

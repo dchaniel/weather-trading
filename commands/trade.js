@@ -12,7 +12,7 @@ import { executeTrade, getLedger, getOpenPositions, getTotalPnL, settleDate } fr
 import { fetchObservation } from '../lib/weather/observe.js';
 import { table, today, signed } from '../lib/core/utils.js';
 import { checkRiskLimits } from '../lib/core/risk.js';
-import { executeSettlement } from '../lib/core/settlement.js';
+import { executeSettlement, verifyAllSettledTrades } from '../lib/core/settlement.js';
 import { runGuards } from '../lib/core/guard.js';
 import { findById, updateStatus, getPending, getAll } from '../lib/core/pending.js';
 import { execute } from '../lib/core/executor.js';
@@ -45,6 +45,9 @@ export default async function(args) {
   }
   if (subcommand === 'settle') {
     return settleCmd(args.slice(1));
+  }
+  if (subcommand === 'verify') {
+    return verifyCmd(args.slice(1));
   }
 
   // Default: execute trade
@@ -289,6 +292,45 @@ function listPending() {
   }
 }
 
+export async function verifyCmd() {
+  console.log('\n🔍 Verifying all settled trades against Kalshi API...');
+  console.log('═'.repeat(70));
+
+  const results = await verifyAllSettledTrades();
+  
+  let matches = 0, mismatches = 0, unresolved = 0;
+  let pnlDiff = 0;
+
+  for (const r of results) {
+    if (r.status === 'unresolved') {
+      unresolved++;
+      console.log(`  ⏳ #${r.tradeId} ${r.contract} — not resolved on Kalshi`);
+      continue;
+    }
+    
+    if (r.match) {
+      matches++;
+      console.log(`  ✅ #${r.tradeId} ${r.contract} ${r.side} — Kalshi: ${r.kalshiResult} | P&L: ${signed(r.ourPnl, 2)}${r.duplicate ? ' (dup)' : ''}`);
+    } else {
+      mismatches++;
+      const diff = r.kalshiPnl - r.ourPnl;
+      pnlDiff += diff;
+      console.log(`  ❌ #${r.tradeId} ${r.contract} ${r.side} — MISMATCH!`);
+      console.log(`      Kalshi: ${r.kalshiResult} (won=${r.kalshiWon}, pnl=${signed(r.kalshiPnl, 2)}) | Ours: won=${!r.kalshiWon}, pnl=${signed(r.ourPnl, 2)}`);
+      console.log(`      Kalshi expiration_value: ${r.kalshiExpirationValue}°F | Our actualHigh: ${r.ourActualHigh}°F`);
+    }
+  }
+
+  console.log('\n' + '─'.repeat(70));
+  console.log(`  Summary: ${matches} match, ${mismatches} mismatch, ${unresolved} unresolved`);
+  if (mismatches > 0) {
+    console.log(`  ⚠️  P&L discrepancy: ${signed(pnlDiff, 2)} (Kalshi truth vs our ledger)`);
+  } else if (unresolved === 0) {
+    console.log(`  ✅ All settlements verified correct!`);
+  }
+  console.log();
+}
+
 function showHelp() {
   console.log(`
 kalshi trade — Unified trade management
@@ -301,6 +343,7 @@ Commands:
   kalshi trade ledger                                            Show paper trading ledger
   kalshi trade risk                                              Show risk status
   kalshi trade settle <date>                                     Settle positions for date
+  kalshi trade verify                                            Verify settled trades vs Kalshi API
 
 Examples:
   kalshi trade KNYC KXHIGHNY-26-FEB-09-68 yes 10 --price 0.65   Execute trade
@@ -370,14 +413,23 @@ export async function settleCmd(args) {
     let totalPnl = 0;
     for (const trade of result.results) {
       const outcome = trade.won ? '✅ WON' : '❌ LOST';
-      console.log(`\n    ${trade.station}: ${trade.side.toUpperCase()} ${trade.qty}x ${trade.contract}`);
-      console.log(`      Actual High: ${trade.actualHigh}°F (threshold: ${trade.threshold}°F)`);
+      const strategy = trade.strategy || 'weather';
+      const label = trade.station || strategy;
+      console.log(`\n    [${strategy}] ${label}: ${trade.side.toUpperCase()} ${trade.qty}x ${trade.contract}`);
+      
+      // Show details based on settlement source
+      if (trade.source === 'kalshi_api') {
+        console.log(`      Kalshi result: ${trade.kalshiResult.toUpperCase()}`);
+      } else if (trade.actualHigh != null) {
+        console.log(`      Actual High: ${trade.actualHigh}°F (threshold: ${trade.threshold}°F)`);
+      }
+      
       console.log(`      ${outcome} — P&L: ${signed(trade.pnl, 2)}`);
       totalPnl += trade.pnl;
       
-      // Log observation to history
+      // Log observation to history (weather only)
       try {
-        if (trade.forecastHigh) {
+        if (trade.forecastHigh && trade.actualHigh != null) {
           const forecastError = trade.actualHigh - trade.forecastHigh;
           appendObservation(trade.station, trade.actualHigh, forecastError);
         }
