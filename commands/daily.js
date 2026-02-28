@@ -159,7 +159,8 @@ export default async function(args) {
         const parsed = parseTicker(mkt.ticker);
         if (!parsed) continue;
 
-        const pTrue = probAboveThreshold(fc.consensus, parsed.threshold);
+        // Kalshi threshold: YES = below threshold, so P(YES) = 1 - P(above)
+        const pTrue = 1 - probAboveThreshold(fc.consensus, parsed.threshold);
         const midPrice = (mkt.yes_bid + mkt.yes_ask) / 2;
         const edge = pTrue - midPrice;
 
