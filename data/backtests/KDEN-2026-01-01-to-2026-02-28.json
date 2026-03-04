@@ -1,0 +1,426 @@
+{
+  "station": "KDEN",
+  "startDate": "2026-01-01",
+  "endDate": "2026-02-28",
+  "days": [
+    {
+      "date": "2026-01-01",
+      "actual": 59.8,
+      "forecast": 59,
+      "error": -0.8,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-02",
+      "actual": 58.5,
+      "forecast": 59.1,
+      "error": 0.6,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-03",
+      "actual": 62.8,
+      "forecast": 62.3,
+      "error": -0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-04",
+      "actual": 66.8,
+      "forecast": 66.5,
+      "error": -0.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-05",
+      "actual": 58.7,
+      "forecast": 58.6,
+      "error": -0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-06",
+      "actual": 56.2,
+      "forecast": 55.4,
+      "error": -0.8,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-01-07",
+      "actual": 57.7,
+      "forecast": 57.6,
+      "error": -0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-08",
+      "actual": 49.3,
+      "forecast": 48.1,
+      "error": -1.2,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-01-09",
+      "actual": 31.8,
+      "forecast": 31.4,
+      "error": -0.4,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-10",
+      "actual": 41.2,
+      "forecast": 41.3,
+      "error": 0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-11",
+      "actual": 53.6,
+      "forecast": 53,
+      "error": -0.6,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-12",
+      "actual": 58.8,
+      "forecast": 58.5,
+      "error": -0.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-13",
+      "actual": 60.9,
+      "forecast": 59.8,
+      "error": -1.1,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-01-14",
+      "actual": 53.2,
+      "forecast": 53.6,
+      "error": 0.4,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-15",
+      "actual": 58.5,
+      "forecast": 59.1,
+      "error": 0.6,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-16",
+      "actual": 51.6,
+      "forecast": 52.4,
+      "error": 0.8,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-01-17",
+      "actual": 35.6,
+      "forecast": 36.1,
+      "error": 0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-18",
+      "actual": 49.5,
+      "forecast": 50,
+      "error": 0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-19",
+      "actual": 41,
+      "forecast": 40.9,
+      "error": -0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-20",
+      "actual": 53.9,
+      "forecast": 54.1,
+      "error": 0.2,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-21",
+      "actual": 48.6,
+      "forecast": 47.7,
+      "error": -0.9,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-22",
+      "actual": 40.1,
+      "forecast": 40.9,
+      "error": 0.8,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-23",
+      "actual": 29.8,
+      "forecast": 29.6,
+      "error": -0.2,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-24",
+      "actual": 17.5,
+      "forecast": 17.7,
+      "error": 0.2,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-25",
+      "actual": 27.5,
+      "forecast": 27,
+      "error": -0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-26",
+      "actual": 45.2,
+      "forecast": 45.6,
+      "error": 0.4,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-27",
+      "actual": 47.3,
+      "forecast": 48.2,
+      "error": 0.9,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-28",
+      "actual": 47.8,
+      "forecast": 47.4,
+      "error": -0.4,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-29",
+      "actual": 43.4,
+      "forecast": 43.5,
+      "error": 0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-30",
+      "actual": 47.3,
+      "forecast": 48.2,
+      "error": 0.9,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-31",
+      "actual": 54.8,
+      "forecast": 54.1,
+      "error": -0.7,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-01",
+      "actual": 61.3,
+      "forecast": 61,
+      "error": -0.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-02-02",
+      "actual": 54,
+      "forecast": 53.4,
+      "error": -0.6,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-03",
+      "actual": 46.9,
+      "forecast": 47.4,
+      "error": 0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-04",
+      "actual": 51,
+      "forecast": 51,
+      "error": 0,
+      "spread": 0
+    },
+    {
+      "date": "2026-02-05",
+      "actual": 64,
+      "forecast": 65.1,
+      "error": 1.1,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-06",
+      "actual": 65.3,
+      "forecast": 64.1,
+      "error": -1.2,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-07",
+      "actual": 62.4,
+      "forecast": 61.7,
+      "error": -0.7,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-08",
+      "actual": 64.6,
+      "forecast": 64,
+      "error": -0.6,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-09",
+      "actual": 70.1,
+      "forecast": 70.6,
+      "error": 0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-10",
+      "actual": 62.7,
+      "forecast": 61.8,
+      "error": -0.9,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-02-11",
+      "actual": 57.3,
+      "forecast": 56.1,
+      "error": -1.2,
+      "spread": 1
+    },
+    {
+      "date": "2026-02-12",
+      "actual": 60.2,
+      "forecast": 59.5,
+      "error": -0.7,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-13",
+      "actual": 57.3,
+      "forecast": 56.1,
+      "error": -1.2,
+      "spread": 1
+    },
+    {
+      "date": "2026-02-14",
+      "actual": 56.7,
+      "forecast": 57.4,
+      "error": 0.7,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-15",
+      "actual": 66.7,
+      "forecast": 66.4,
+      "error": -0.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-02-16",
+      "actual": 68.2,
+      "forecast": 67.6,
+      "error": -0.6,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-17",
+      "actual": 58.4,
+      "forecast": 57.7,
+      "error": -0.7,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-18",
+      "actual": 53.4,
+      "forecast": 53.9,
+      "error": 0.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-19",
+      "actual": 47.5,
+      "forecast": 46.4,
+      "error": -1.1,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-20",
+      "actual": 33.3,
+      "forecast": 32.3,
+      "error": -1,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-21",
+      "actual": 44.2,
+      "forecast": 43.3,
+      "error": -0.9,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-02-22",
+      "actual": 47.7,
+      "forecast": 48.1,
+      "error": 0.4,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-23",
+      "actual": 65.1,
+      "forecast": 65.7,
+      "error": 0.6,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-24",
+      "actual": 70.3,
+      "forecast": 70.2,
+      "error": -0.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-25",
+      "actual": 66,
+      "forecast": 65,
+      "error": -1,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-26",
+      "actual": 62.2,
+      "forecast": 63.4,
+      "error": 1.2,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-27",
+      "actual": 65.8,
+      "forecast": 66.8,
+      "error": 1,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-28",
+      "actual": 69.3,
+      "forecast": 69,
+      "error": -0.3,
+      "spread": 0.2
+    }
+  ],
+  "stats": {
+    "mae": 0.61,
+    "bias": -0.15,
+    "hitRate": 100,
+    "n": 59
+  }
+}
