@@ -1,0 +1,120 @@
+{
+  "KNYC": {
+    "n": 7,
+    "mae": 8.7,
+    "bias": -8.7,
+    "maxDiff": 16.7,
+    "within2pct": 0,
+    "baseSigma": 4.5,
+    "comparisons": [
+      {
+        "date": "2026-02-25",
+        "omHigh": 36.5,
+        "asosHigh": 44.1,
+        "diff": -7.6,
+        "nObs": 13
+      },
+      {
+        "date": "2026-02-26",
+        "omHigh": 39.8,
+        "asosHigh": 48,
+        "diff": -8.2,
+        "nObs": 30
+      },
+      {
+        "date": "2026-02-27",
+        "omHigh": 34.2,
+        "asosHigh": 44.1,
+        "diff": -9.9,
+        "nObs": 30
+      },
+      {
+        "date": "2026-02-28",
+        "omHigh": 37.3,
+        "asosHigh": 54,
+        "diff": -16.7,
+        "nObs": 41
+      },
+      {
+        "date": "2026-03-01",
+        "omHigh": 37.8,
+        "asosHigh": 45,
+        "diff": -7.2,
+        "nObs": 36
+      },
+      {
+        "date": "2026-03-02",
+        "omHigh": 28.3,
+        "asosHigh": 37,
+        "diff": -8.7,
+        "nObs": 30
+      },
+      {
+        "date": "2026-03-03",
+        "omHigh": 33.7,
+        "asosHigh": 36,
+        "diff": -2.3,
+        "nObs": 57
+      }
+    ]
+  },
+  "KATL": {
+    "n": 7,
+    "mae": 3.1,
+    "bias": -3.1,
+    "maxDiff": 4.5,
+    "within2pct": 28.6,
+    "baseSigma": 4,
+    "comparisons": [
+      {
+        "date": "2026-02-25",
+        "omHigh": 61.7,
+        "asosHigh": 62.6,
+        "diff": -0.9,
+        "nObs": 145
+      },
+      {
+        "date": "2026-02-26",
+        "omHigh": 63.4,
+        "asosHigh": 64.4,
+        "diff": -1,
+        "nObs": 400
+      },
+      {
+        "date": "2026-02-27",
+        "omHigh": 66.4,
+        "asosHigh": 69.8,
+        "diff": -3.4,
+        "nObs": 402
+      },
+      {
+        "date": "2026-02-28",
+        "omHigh": 67.1,
+        "asosHigh": 71.6,
+        "diff": -4.5,
+        "nObs": 404
+      },
+      {
+        "date": "2026-03-01",
+        "omHigh": 74.5,
+        "asosHigh": 78.8,
+        "diff": -4.3,
+        "nObs": 390
+      },
+      {
+        "date": "2026-03-02",
+        "omHigh": 72.8,
+        "asosHigh": 77,
+        "diff": -4.2,
+        "nObs": 393
+      },
+      {
+        "date": "2026-03-03",
+        "omHigh": 59.9,
+        "asosHigh": 63,
+        "diff": -3.1,
+        "nObs": 395
+      }
+    ]
+  }
+}
