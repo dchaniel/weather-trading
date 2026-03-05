@@ -39,8 +39,8 @@
       "11": 42,
       "12": 32
     },
-    "bias": -0.9,
-    "baseSigma": 4.5,
+    "bias": 8,
+    "baseSigma": 8,
     "baseSigmaLow": 0.9,
     "ecmwfMAE": 0.7,
     "gfsMAE": 2.4,
@@ -143,7 +143,7 @@
       "11": 67,
       "12": 63
     },
-    "baseSigma": 5.0,
+    "baseSigma": 3,
     "baseSigmaLow": 0.82,
     "ecmwfMAE": 1.2,
     "gfsMAE": 1.2,
@@ -152,7 +152,8 @@
     "currentStdDev": 1,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "bias": 2.5
   },
   "KDEN": {
     "name": "Denver International",
@@ -194,7 +195,7 @@
       "11": 25,
       "12": 17
     },
-    "baseSigma": 5.5,
+    "baseSigma": 5.4,
     "baseSigmaLow": 1.05,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.4,
@@ -203,7 +204,8 @@
     "currentStdDev": 1.1,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "bias": 1.4
   },
   "KIAH": {
     "name": "Houston Intercontinental",
@@ -244,8 +246,8 @@
       "11": 51,
       "12": 44
     },
-    "bias": -0.4,
-    "baseSigma": 5.0,
+    "bias": 0.7,
+    "baseSigma": 3,
     "baseSigmaLow": 1.15,
     "ecmwfMAE": 0.9,
     "gfsMAE": 1.7,
@@ -296,7 +298,7 @@
       "11": 43,
       "12": 36
     },
-    "baseSigma": 4.0,
+    "baseSigma": 3.5,
     "baseSigmaLow": 1.12,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.7,
@@ -305,7 +307,8 @@
     "currentStdDev": 1.2,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "bias": 3.5
   },
   "KDFW": {
     "name": "Dallas/Fort Worth",
@@ -346,7 +349,7 @@
       "11": 46,
       "12": 38
     },
-    "baseSigma": 4.5,
+    "baseSigma": 3,
     "baseSigmaLow": 0.95,
     "ecmwfMAE": 1.1,
     "gfsMAE": 1.6,
@@ -356,7 +359,8 @@
     "currentStdDev": 1,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "bias": 1.6
   },
   "KLAX": {
     "name": "Los Angeles International",
@@ -398,7 +402,7 @@
       "12": 49
     },
     "bias": -2.2,
-    "baseSigma": 5.0,
+    "baseSigma": 5,
     "baseSigmaLow": 2.55,
     "ecmwfMAE": 2.3,
     "gfsMAE": 2.8,
@@ -448,8 +452,8 @@
       "11": 48,
       "12": 44
     },
-    "bias": 0.4,
-    "baseSigma": 5.5,
+    "bias": 0.8,
+    "baseSigma": 3.7,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 1.4,
     "gfsMAE": 1.2,
@@ -500,8 +504,8 @@
       "11": 39,
       "12": 35
     },
-    "bias": 0.6,
-    "baseSigma": 4.5,
+    "bias": 2,
+    "baseSigma": 3,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.3,
@@ -552,8 +556,8 @@
       "11": 39,
       "12": 30
     },
-    "bias": -0.8,
-    "baseSigma": 5.0,
+    "bias": 2.3,
+    "baseSigma": 3,
     "baseSigmaLow": 1.42,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.9,
@@ -604,8 +608,8 @@
       "11": 41,
       "12": 33
     },
-    "bias": -1.2,
-    "baseSigma": 4.0,
+    "bias": 2.6,
+    "baseSigma": 5.1,
     "baseSigmaLow": 1.85,
     "ecmwfMAE": 0.9,
     "gfsMAE": 2.4,
@@ -656,8 +660,8 @@
       "11": 48,
       "12": 41
     },
-    "bias": -0.7,
-    "baseSigma": 4.5,
+    "bias": 2.8,
+    "baseSigma": 3,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 0.6,
     "gfsMAE": 1.8,
@@ -708,8 +712,8 @@
       "11": 25,
       "12": 12
     },
-    "bias": 0,
-    "baseSigma": 5.0,
+    "bias": 5.8,
+    "baseSigma": 6.5,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.58,
     "gfsMAE": 1.9,
@@ -756,8 +760,8 @@
       "11": 38,
       "12": 30
     },
-    "bias": -1.1,
-    "baseSigma": 4.0,
+    "bias": 5.7,
+    "baseSigma": 5.7,
     "baseSigmaLow": 1.52,
     "ecmwfMAE": 0.8,
     "gfsMAE": 2.3,
