@@ -1,7 +1,7 @@
 {
   "station": "KNYC",
   "startDate": "2026-01-01",
-  "endDate": "2026-02-27",
+  "endDate": "2026-03-05",
   "days": [
     {
       "date": "2026-01-01",
@@ -408,12 +408,54 @@
       "forecast": 43.7,
       "error": 8.4,
       "spread": 0.3
+    },
+    {
+      "date": "2026-02-28",
+      "actual": 37.3,
+      "forecast": 44.9,
+      "error": 7.6,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-01",
+      "actual": 37.8,
+      "forecast": 45.7,
+      "error": 7.9,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-03-02",
+      "actual": 32.1,
+      "forecast": 41,
+      "error": 8.9,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-03-03",
+      "actual": 33.7,
+      "forecast": 41.2,
+      "error": 7.5,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-03-04",
+      "actual": 45.3,
+      "forecast": 53,
+      "error": 7.7,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-05",
+      "actual": 41.4,
+      "forecast": 48.9,
+      "error": 7.5,
+      "spread": 0.4
     }
   ],
   "stats": {
-    "mae": 7.97,
-    "bias": 7.97,
+    "mae": 7.96,
+    "bias": 7.96,
     "hitRate": 0,
-    "n": 58
+    "n": 64
   }
 }
