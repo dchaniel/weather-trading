@@ -59,3 +59,4 @@
 {"ts":"2026-02-19T03:01:26.169Z","level":"INFO","category":"trade","message":"OPEN","trade":{"id":49,"timestamp":"2026-02-19T03:01:26.168Z","strategy":"gas","contract":"KXAAAGASW-26FEB23-2.959","side":"yes","qty":20,"price":0.13,"cost":2.6,"settled":false,"pnl":null,"expectedEdge":0.83,"pEst":1}}
 {"ts":"2026-02-19T07:01:19.973Z","level":"INFO","category":"trade","message":"OPEN","trade":{"id":50,"timestamp":"2026-02-19T07:01:19.972Z","strategy":"gas","contract":"KXAAAGASW-26FEB23-2.959","side":"yes","qty":20,"price":0.12,"cost":2.4,"settled":false,"pnl":null,"expectedEdge":0.84,"pEst":1}}
 {"ts":"2026-02-20T16:13:45.139Z","level":"INFO","category":"settlement","message":"Settled 8 trades for 2026-02-19","date":"2026-02-19","count":8}
+{"ts":"2026-03-07T19:02:54.940Z","level":"INFO","category":"settlement","message":"Settled 12 trades for 2026-02-23","date":"2026-02-23","count":12}
