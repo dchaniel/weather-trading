@@ -731,11 +731,14 @@
       "qty": 20,
       "price": 0.13,
       "cost": 2.6,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -2.6,
       "expectedEdge": 0.79,
       "pEst": 0.92,
-      "status": "open"
+      "status": "open",
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 35,
@@ -746,11 +749,14 @@
       "qty": 20,
       "price": 0.28,
       "cost": 5.6000000000000005,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -5.6,
       "expectedEdge": 0.71,
       "pEst": 0.99,
-      "status": "open"
+      "status": "open",
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 36,
@@ -761,10 +767,13 @@
       "qty": 20,
       "price": 0.13,
       "cost": 2.6,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -2.6,
       "expectedEdge": 0.68,
-      "pEst": 0.81
+      "pEst": 0.81,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 37,
@@ -775,10 +784,13 @@
       "qty": 20,
       "price": 0.24,
       "cost": 4.8,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -4.8,
       "expectedEdge": 0.71,
-      "pEst": 0.99
+      "pEst": 0.99,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 38,
@@ -829,10 +841,13 @@
       "qty": 20,
       "price": 0.17,
       "cost": 3.4000000000000004,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -3.4,
       "expectedEdge": 0.79,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 41,
@@ -903,10 +918,13 @@
       "qty": 20,
       "price": 0.2,
       "cost": 4,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -4,
       "expectedEdge": 0.76,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 45,
@@ -917,10 +935,13 @@
       "qty": 20,
       "price": 0.17,
       "cost": 3.4000000000000004,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -3.4,
       "expectedEdge": 0.79,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 46,
@@ -931,10 +952,13 @@
       "qty": 20,
       "price": 0.15,
       "cost": 3,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -3,
       "expectedEdge": 0.81,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 47,
@@ -945,10 +969,13 @@
       "qty": 20,
       "price": 0.21,
       "cost": 4.2,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -4.2,
       "expectedEdge": 0.75,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 48,
@@ -959,10 +986,13 @@
       "qty": 20,
       "price": 0.2,
       "cost": 4,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -4,
       "expectedEdge": 0.76,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 49,
@@ -973,10 +1003,13 @@
       "qty": 20,
       "price": 0.13,
       "cost": 2.6,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -2.6,
       "expectedEdge": 0.83,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     },
     {
       "id": 50,
@@ -987,10 +1020,13 @@
       "qty": 20,
       "price": 0.12,
       "cost": 2.4,
-      "settled": false,
-      "pnl": null,
+      "settled": true,
+      "pnl": -2.4,
       "expectedEdge": 0.84,
-      "pEst": 1
+      "pEst": 1,
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "settlementSource": "kalshi_api",
+      "kalshiResult": "no"
     }
   ],
   "settlements": [
@@ -1048,6 +1084,11 @@
       "date": "2026-02-19",
       "settledAt": "2026-02-20T16:13:45.137Z",
       "count": 8
+    },
+    {
+      "date": "2026-02-23",
+      "settledAt": "2026-03-07T19:02:54.938Z",
+      "count": 12
     }
   ],
   "resettledAt": "2026-02-15T19:25:08.428Z"
