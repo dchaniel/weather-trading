@@ -1,0 +1,489 @@
+{
+  "station": "KDFW",
+  "startDate": "2026-01-01",
+  "endDate": "2026-03-09",
+  "days": [
+    {
+      "date": "2026-01-01",
+      "actual": 70.1,
+      "forecast": 69,
+      "error": -1.1,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-02",
+      "actual": 75.9,
+      "forecast": 73.8,
+      "error": -2.1,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-03",
+      "actual": 67.9,
+      "forecast": 65.6,
+      "error": -2.3,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-04",
+      "actual": 62.7,
+      "forecast": 60.2,
+      "error": -2.5,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-05",
+      "actual": 70.9,
+      "forecast": 70.3,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-01-06",
+      "actual": 75.4,
+      "forecast": 73.8,
+      "error": -1.6,
+      "spread": 0
+    },
+    {
+      "date": "2026-01-07",
+      "actual": 78.3,
+      "forecast": 76.4,
+      "error": -1.9,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-08",
+      "actual": 78.4,
+      "forecast": 76,
+      "error": -2.4,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-01-09",
+      "actual": 71.9,
+      "forecast": 70.6,
+      "error": -1.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-10",
+      "actual": 62.2,
+      "forecast": 61.8,
+      "error": -0.4,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-01-11",
+      "actual": 58.8,
+      "forecast": 56.9,
+      "error": -1.9,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-12",
+      "actual": 63.7,
+      "forecast": 62.5,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-13",
+      "actual": 65.2,
+      "forecast": 63.1,
+      "error": -2.1,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-14",
+      "actual": 61.2,
+      "forecast": 59.9,
+      "error": -1.3,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-15",
+      "actual": 58.5,
+      "forecast": 57.5,
+      "error": -1,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-16",
+      "actual": 57.8,
+      "forecast": 57.2,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-01-17",
+      "actual": 53.5,
+      "forecast": 52.7,
+      "error": -0.8,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-18",
+      "actual": 59.8,
+      "forecast": 57.4,
+      "error": -2.4,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-19",
+      "actual": 55.8,
+      "forecast": 53.8,
+      "error": -2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-20",
+      "actual": 52.8,
+      "forecast": 51.3,
+      "error": -1.5,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-01-21",
+      "actual": 63.8,
+      "forecast": 61.8,
+      "error": -2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-22",
+      "actual": 59.6,
+      "forecast": 58.8,
+      "error": -0.8,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-23",
+      "actual": 52,
+      "forecast": 50.6,
+      "error": -1.4,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-01-24",
+      "actual": 40.1,
+      "forecast": 39.3,
+      "error": -0.8,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-01-25",
+      "actual": 21.6,
+      "forecast": 20.4,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-26",
+      "actual": 29.2,
+      "forecast": 28,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-01-27",
+      "actual": 38.3,
+      "forecast": 37.4,
+      "error": -0.9,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-28",
+      "actual": 45.1,
+      "forecast": 44.1,
+      "error": -1,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-29",
+      "actual": 53.6,
+      "forecast": 51.4,
+      "error": -2.2,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-01-30",
+      "actual": 46.4,
+      "forecast": 44.2,
+      "error": -2.2,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-01-31",
+      "actual": 41.6,
+      "forecast": 39.8,
+      "error": -1.8,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-01",
+      "actual": 48.1,
+      "forecast": 47.1,
+      "error": -1,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-02",
+      "actual": 65.8,
+      "forecast": 65.2,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-03",
+      "actual": 63,
+      "forecast": 62,
+      "error": -1,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-04",
+      "actual": 57.6,
+      "forecast": 55.8,
+      "error": -1.8,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-05",
+      "actual": 67.1,
+      "forecast": 64.3,
+      "error": -2.8,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-06",
+      "actual": 79.9,
+      "forecast": 78.7,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-07",
+      "actual": 70.5,
+      "forecast": 69,
+      "error": -1.5,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-08",
+      "actual": 78.2,
+      "forecast": 77.6,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-09",
+      "actual": 77.9,
+      "forecast": 76.4,
+      "error": -1.5,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-10",
+      "actual": 73.2,
+      "forecast": 70.9,
+      "error": -2.3,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-11",
+      "actual": 67.5,
+      "forecast": 65.7,
+      "error": -1.8,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-12",
+      "actual": 73.2,
+      "forecast": 70.9,
+      "error": -2.3,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-13",
+      "actual": 78.5,
+      "forecast": 77,
+      "error": -1.5,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-02-14",
+      "actual": 73.8,
+      "forecast": 73.2,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-15",
+      "actual": 65.9,
+      "forecast": 64.6,
+      "error": -1.3,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-16",
+      "actual": 69.3,
+      "forecast": 67.4,
+      "error": -1.9,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-02-17",
+      "actual": 75.4,
+      "forecast": 73.8,
+      "error": -1.6,
+      "spread": 0
+    },
+    {
+      "date": "2026-02-18",
+      "actual": 73.8,
+      "forecast": 73.2,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-19",
+      "actual": 74.8,
+      "forecast": 72.9,
+      "error": -1.9,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-02-20",
+      "actual": 68.9,
+      "forecast": 66.2,
+      "error": -2.7,
+      "spread": 0.9
+    },
+    {
+      "date": "2026-02-21",
+      "actual": 59.2,
+      "forecast": 57.3,
+      "error": -1.9,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-02-22",
+      "actual": 55.4,
+      "forecast": 53.4,
+      "error": -2,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-23",
+      "actual": 57.3,
+      "forecast": 54.5,
+      "error": -2.8,
+      "spread": 1
+    },
+    {
+      "date": "2026-02-24",
+      "actual": 72.8,
+      "forecast": 71.9,
+      "error": -0.9,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-25",
+      "actual": 79.8,
+      "forecast": 77.9,
+      "error": -1.9,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-26",
+      "actual": 79.2,
+      "forecast": 77.9,
+      "error": -1.3,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-27",
+      "actual": 79.3,
+      "forecast": 78,
+      "error": -1.3,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-28",
+      "actual": 83.2,
+      "forecast": 82,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-01",
+      "actual": 81.1,
+      "forecast": 79.9,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-02",
+      "actual": 79.1,
+      "forecast": 77.1,
+      "error": -2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-03",
+      "actual": 83,
+      "forecast": 80.8,
+      "error": -2.2,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-03-04",
+      "actual": 81.7,
+      "forecast": 80.3,
+      "error": -1.4,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-03-05",
+      "actual": 80,
+      "forecast": 79.4,
+      "error": -0.6,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-03-06",
+      "actual": 81.1,
+      "forecast": 79.9,
+      "error": -1.2,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-03-07",
+      "actual": 68.7,
+      "forecast": 67.4,
+      "error": -1.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-03-08",
+      "actual": 69.2,
+      "forecast": 67.9,
+      "error": -1.3,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-03-09",
+      "actual": 82,
+      "forecast": 79.3,
+      "error": -2.7,
+      "spread": 0.9
+    }
+  ],
+  "stats": {
+    "mae": 1.53,
+    "bias": -1.53,
+    "hitRate": 77.9,
+    "n": 68
+  }
+}
