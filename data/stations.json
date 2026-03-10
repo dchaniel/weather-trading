@@ -40,7 +40,7 @@
       "12": 32
     },
     "bias": 8,
-    "baseSigma": 2.7,
+    "baseSigma": 6.4,
     "baseSigmaLow": 0.9,
     "ecmwfMAE": 0.7,
     "gfsMAE": 2.4,
@@ -50,7 +50,8 @@
     "currentStdDev": 1.6,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 14
   },
   "KMDW": {
     "name": "Chicago Midway",
@@ -143,7 +144,7 @@
       "11": 67,
       "12": 63
     },
-    "baseSigma": 2.0,
+    "baseSigma": 2.9,
     "baseSigmaLow": 0.82,
     "ecmwfMAE": 1.2,
     "gfsMAE": 1.2,
@@ -153,7 +154,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "bias": 2.5
+    "bias": 2.5,
+    "asosCalibratedN": 7
   },
   "KDEN": {
     "name": "Denver International",
@@ -195,7 +197,7 @@
       "11": 25,
       "12": 17
     },
-    "baseSigma": 2.0,
+    "baseSigma": 7.5,
     "baseSigmaLow": 1.05,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.4,
@@ -205,7 +207,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "bias": 1.4
+    "bias": 1.4,
+    "asosCalibratedN": 7
   },
   "KIAH": {
     "name": "Houston Intercontinental",
@@ -247,7 +250,7 @@
       "12": 44
     },
     "bias": 0.7,
-    "baseSigma": 2.0,
+    "baseSigma": 2.5,
     "baseSigmaLow": 1.15,
     "ecmwfMAE": 0.9,
     "gfsMAE": 1.7,
@@ -257,7 +260,8 @@
     "currentStdDev": 1.3,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KATL": {
     "name": "Atlanta Hartsfield",
@@ -298,7 +302,7 @@
       "11": 43,
       "12": 36
     },
-    "baseSigma": 2.1,
+    "baseSigma": 2.5,
     "baseSigmaLow": 1.12,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.7,
@@ -308,7 +312,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "bias": 3.5
+    "bias": 3.5,
+    "asosCalibratedN": 14
   },
   "KDFW": {
     "name": "Dallas/Fort Worth",
@@ -349,7 +354,7 @@
       "11": 46,
       "12": 38
     },
-    "baseSigma": 2.0,
+    "baseSigma": 2.5,
     "baseSigmaLow": 0.95,
     "ecmwfMAE": 1.1,
     "gfsMAE": 1.6,
@@ -360,7 +365,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "bias": 1.6
+    "bias": 1.6,
+    "asosCalibratedN": 7
   },
   "KLAX": {
     "name": "Los Angeles International",
@@ -453,7 +459,7 @@
       "12": 44
     },
     "bias": 0.8,
-    "baseSigma": 2.0,
+    "baseSigma": 5.2,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 1.4,
     "gfsMAE": 1.2,
@@ -463,7 +469,8 @@
     "currentStdDev": 1.4,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KSEA": {
     "name": "Seattle-Tacoma International",
@@ -505,7 +512,7 @@
       "12": 35
     },
     "bias": 2,
-    "baseSigma": 2.0,
+    "baseSigma": 3.3,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.3,
@@ -515,7 +522,8 @@
     "currentStdDev": 1.2,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KOKC": {
     "name": "Oklahoma City Will Rogers",
@@ -557,7 +565,7 @@
       "12": 30
     },
     "bias": 2.3,
-    "baseSigma": 2.7,
+    "baseSigma": 2.5,
     "baseSigmaLow": 1.42,
     "ecmwfMAE": 0.8,
     "gfsMAE": 1.9,
@@ -567,7 +575,8 @@
     "currentStdDev": 1.6,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KDCA": {
     "name": "Washington Reagan National",
@@ -609,7 +618,7 @@
       "12": 33
     },
     "bias": 2.6,
-    "baseSigma": 3.2,
+    "baseSigma": 6.5,
     "baseSigmaLow": 1.85,
     "ecmwfMAE": 0.9,
     "gfsMAE": 2.4,
@@ -619,7 +628,8 @@
     "currentStdDev": 1.8,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KAUS": {
     "name": "Austin-Bergstrom International",
@@ -661,7 +671,7 @@
       "12": 41
     },
     "bias": 2.8,
-    "baseSigma": 2.1,
+    "baseSigma": 2.5,
     "baseSigmaLow": 1.28,
     "ecmwfMAE": 0.6,
     "gfsMAE": 1.8,
@@ -671,7 +681,8 @@
     "currentStdDev": 1.3,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "KMSP": {
     "name": "Minneapolis-Saint Paul International",
@@ -713,13 +724,14 @@
       "12": 12
     },
     "bias": 5.8,
-    "baseSigma": 2.2,
+    "baseSigma": 7.2,
     "baseSigmaLow": 1.18,
     "ecmwfMAE": 0.58,
     "gfsMAE": 1.9,
     "tier": "A",
     "currentMAE": 1,
-    "currentStdDev": 1.4
+    "currentStdDev": 1.4,
+    "asosCalibratedN": 7
   },
   "KPHL": {
     "name": "Philadelphia International",
@@ -761,7 +773,7 @@
       "12": 30
     },
     "bias": 5.7,
-    "baseSigma": 2.8,
+    "baseSigma": 5.0,
     "baseSigmaLow": 1.52,
     "ecmwfMAE": 0.8,
     "gfsMAE": 2.3,
@@ -771,7 +783,8 @@
     "currentStdDev": 1.8,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "asosCalibratedN": 7
   },
   "_recalibration": {
     "date": "2026-03-02T07:02:24.911Z",
