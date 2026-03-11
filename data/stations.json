@@ -51,7 +51,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 14
+    "asosCalibratedN": 14,
+    "biasN": 30
   },
   "KMDW": {
     "name": "Chicago Midway",
@@ -102,7 +103,8 @@
     "enabled": false,
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "biasN": 30
   },
   "KMIA": {
     "name": "Miami International",
@@ -155,7 +157,8 @@
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
     "bias": 2.5,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KDEN": {
     "name": "Denver International",
@@ -208,7 +211,8 @@
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
     "bias": 1.4,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KIAH": {
     "name": "Houston Intercontinental",
@@ -261,7 +265,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KATL": {
     "name": "Atlanta Hartsfield",
@@ -313,7 +318,8 @@
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
     "bias": 3.5,
-    "asosCalibratedN": 14
+    "asosCalibratedN": 14,
+    "biasN": 30
   },
   "KDFW": {
     "name": "Dallas/Fort Worth",
@@ -366,7 +372,8 @@
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
     "bias": 1.6,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KLAX": {
     "name": "Los Angeles International",
@@ -417,7 +424,8 @@
     "correlationGroup": "west_coast",
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
-    "calibrationN": 90
+    "calibrationN": 90,
+    "biasN": 30
   },
   "KSFO": {
     "name": "San Francisco International",
@@ -470,7 +478,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KSEA": {
     "name": "Seattle-Tacoma International",
@@ -523,7 +532,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KOKC": {
     "name": "Oklahoma City Will Rogers",
@@ -576,7 +586,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KDCA": {
     "name": "Washington Reagan National",
@@ -629,7 +640,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KAUS": {
     "name": "Austin-Bergstrom International",
@@ -682,7 +694,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KMSP": {
     "name": "Minneapolis-Saint Paul International",
@@ -731,7 +744,8 @@
     "tier": "A",
     "currentMAE": 1,
     "currentStdDev": 1.4,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "KPHL": {
     "name": "Philadelphia International",
@@ -784,7 +798,8 @@
     "calibratedAt": "2026-03-03",
     "calibrationWindow": "2025-12-01 to 2026-02-28",
     "calibrationN": 90,
-    "asosCalibratedN": 7
+    "asosCalibratedN": 7,
+    "biasN": 30
   },
   "_recalibration": {
     "date": "2026-03-02T07:02:24.911Z",
