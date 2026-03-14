@@ -1,0 +1,333 @@
+{
+  "station": "KATL",
+  "startDate": "2026-02-01",
+  "endDate": "2026-03-12",
+  "days": [
+    {
+      "date": "2026-02-01",
+      "actual": 33.1,
+      "forecast": 37.6,
+      "rawForecast": 34.1,
+      "error": 4.5,
+      "spread": 2.7
+    },
+    {
+      "date": "2026-02-02",
+      "actual": 47.9,
+      "forecast": 52.7,
+      "rawForecast": 49.2,
+      "error": 4.8,
+      "spread": 1.9
+    },
+    {
+      "date": "2026-02-03",
+      "actual": 58.2,
+      "forecast": 62.4,
+      "rawForecast": 58.9,
+      "error": 4.2,
+      "spread": 2.2
+    },
+    {
+      "date": "2026-02-04",
+      "actual": 53.8,
+      "forecast": 58,
+      "rawForecast": 54.5,
+      "error": 4.2,
+      "spread": 1.2
+    },
+    {
+      "date": "2026-02-05",
+      "actual": 46,
+      "forecast": 48.1,
+      "rawForecast": 44.6,
+      "error": 2.1,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-02-06",
+      "actual": 59.9,
+      "forecast": 64.9,
+      "rawForecast": 61.4,
+      "error": 5,
+      "spread": 3.9
+    },
+    {
+      "date": "2026-02-07",
+      "actual": 54.3,
+      "forecast": 59.4,
+      "rawForecast": 55.9,
+      "error": 5.1,
+      "spread": 2.7
+    },
+    {
+      "date": "2026-02-08",
+      "actual": 57.7,
+      "forecast": 61.5,
+      "rawForecast": 58,
+      "error": 3.8,
+      "spread": 2.2
+    },
+    {
+      "date": "2026-02-09",
+      "actual": 65.6,
+      "forecast": 68.5,
+      "rawForecast": 65,
+      "error": 2.9,
+      "spread": 2.9
+    },
+    {
+      "date": "2026-02-10",
+      "actual": 70.2,
+      "forecast": 72.9,
+      "rawForecast": 69.4,
+      "error": 2.7,
+      "spread": 1.6
+    },
+    {
+      "date": "2026-02-11",
+      "actual": 64.7,
+      "forecast": 66.1,
+      "rawForecast": 62.6,
+      "error": 1.4,
+      "spread": 1.5
+    },
+    {
+      "date": "2026-02-12",
+      "actual": 61.2,
+      "forecast": 65.2,
+      "rawForecast": 61.7,
+      "error": 4,
+      "spread": 3.1
+    },
+    {
+      "date": "2026-02-13",
+      "actual": 58.7,
+      "forecast": 63.5,
+      "rawForecast": 60,
+      "error": 4.8,
+      "spread": 3.8
+    },
+    {
+      "date": "2026-02-14",
+      "actual": 60.8,
+      "forecast": 64.2,
+      "rawForecast": 60.7,
+      "error": 3.4,
+      "spread": 0.6
+    },
+    {
+      "date": "2026-02-15",
+      "actual": 61.9,
+      "forecast": 60.9,
+      "rawForecast": 57.4,
+      "error": -1,
+      "spread": 3
+    },
+    {
+      "date": "2026-02-16",
+      "actual": 65.1,
+      "forecast": 70.4,
+      "rawForecast": 66.9,
+      "error": 5.3,
+      "spread": 2.9
+    },
+    {
+      "date": "2026-02-17",
+      "actual": 66.2,
+      "forecast": 70.4,
+      "rawForecast": 66.9,
+      "error": 4.2,
+      "spread": 2
+    },
+    {
+      "date": "2026-02-18",
+      "actual": 65.8,
+      "forecast": 69.2,
+      "rawForecast": 65.7,
+      "error": 3.4,
+      "spread": 0.4
+    },
+    {
+      "date": "2026-02-19",
+      "actual": 76.1,
+      "forecast": 80.7,
+      "rawForecast": 77.2,
+      "error": 4.6,
+      "spread": 1.7
+    },
+    {
+      "date": "2026-02-20",
+      "actual": 75.6,
+      "forecast": 80.6,
+      "rawForecast": 77.1,
+      "error": 5,
+      "spread": 3.1
+    },
+    {
+      "date": "2026-02-21",
+      "actual": 66.9,
+      "forecast": 72.5,
+      "rawForecast": 69,
+      "error": 5.6,
+      "spread": 6.9
+    },
+    {
+      "date": "2026-02-22",
+      "actual": 60.1,
+      "forecast": 63.8,
+      "rawForecast": 60.3,
+      "error": 3.7,
+      "spread": 0.3
+    },
+    {
+      "date": "2026-02-23",
+      "actual": 39.5,
+      "forecast": 42.9,
+      "rawForecast": 39.4,
+      "error": 3.4,
+      "spread": 0.7
+    },
+    {
+      "date": "2026-02-24",
+      "actual": 51.1,
+      "forecast": 55.7,
+      "rawForecast": 52.2,
+      "error": 4.6,
+      "spread": 1.9
+    },
+    {
+      "date": "2026-02-25",
+      "actual": 61.7,
+      "forecast": 65,
+      "rawForecast": 61.5,
+      "error": 3.3,
+      "spread": 1.4
+    },
+    {
+      "date": "2026-02-26",
+      "actual": 63.4,
+      "forecast": 65.6,
+      "rawForecast": 62.1,
+      "error": 2.2,
+      "spread": 0.8
+    },
+    {
+      "date": "2026-02-27",
+      "actual": 66.4,
+      "forecast": 69.1,
+      "rawForecast": 65.6,
+      "error": 2.7,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-02-28",
+      "actual": 67.1,
+      "forecast": 71.8,
+      "rawForecast": 68.3,
+      "error": 4.7,
+      "spread": 2.4
+    },
+    {
+      "date": "2026-03-01",
+      "actual": 74.5,
+      "forecast": 79.9,
+      "rawForecast": 76.4,
+      "error": 5.4,
+      "spread": 1.4
+    },
+    {
+      "date": "2026-03-02",
+      "actual": 72.8,
+      "forecast": 76.2,
+      "rawForecast": 72.7,
+      "error": 3.4,
+      "spread": 5.6
+    },
+    {
+      "date": "2026-03-03",
+      "actual": 59.9,
+      "forecast": 65.2,
+      "rawForecast": 61.7,
+      "error": 5.3,
+      "spread": 4.3
+    },
+    {
+      "date": "2026-03-04",
+      "actual": 71.4,
+      "forecast": 77.1,
+      "rawForecast": 73.6,
+      "error": 5.7,
+      "spread": 3.7
+    },
+    {
+      "date": "2026-03-05",
+      "actual": 76.6,
+      "forecast": 80.6,
+      "rawForecast": 77.1,
+      "error": 4,
+      "spread": 2.2
+    },
+    {
+      "date": "2026-03-06",
+      "actual": 80.2,
+      "forecast": 83.6,
+      "rawForecast": 80.1,
+      "error": 3.4,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-03-07",
+      "actual": 81.1,
+      "forecast": 84,
+      "rawForecast": 80.5,
+      "error": 2.9,
+      "spread": 1.5
+    },
+    {
+      "date": "2026-03-08",
+      "actual": 71.3,
+      "forecast": 78.4,
+      "rawForecast": 74.9,
+      "error": 7.1,
+      "spread": 7.1
+    },
+    {
+      "date": "2026-03-09",
+      "actual": 77.9,
+      "forecast": 81,
+      "rawForecast": 77.5,
+      "error": 3.1,
+      "spread": 0.1
+    },
+    {
+      "date": "2026-03-10",
+      "actual": 79.8,
+      "forecast": 82.2,
+      "rawForecast": 78.7,
+      "error": 2.4,
+      "spread": 0.2
+    },
+    {
+      "date": "2026-03-11",
+      "actual": 82,
+      "forecast": 84.7,
+      "rawForecast": 81.2,
+      "error": 2.7,
+      "spread": 0.5
+    },
+    {
+      "date": "2026-03-12",
+      "actual": 74.6,
+      "forecast": 77.9,
+      "rawForecast": 74.4,
+      "error": 3.3,
+      "spread": 1.2
+    }
+  ],
+  "stats": {
+    "mae": 3.88,
+    "bias": 3.83,
+    "hitRate": 5,
+    "n": 40
+  }
+}
