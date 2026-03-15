@@ -52,7 +52,7 @@ Examples:
   
   const minEdgeIndex = args.findIndex(a => a === '--min-edge');
   const customMinEdge = minEdgeIndex !== -1 && args[minEdgeIndex + 1] 
-    ? parseFloat(args[minEdgeIndex + 1]) / 100 : 0.05;
+    ? parseFloat(args[minEdgeIndex + 1]) / 100 : 0.10;
   
   const ledger = getLedger();
   const dates = [];
